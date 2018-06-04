@@ -3,25 +3,31 @@ dist: trusty
 addons:
   apt:
     sources:
-      - google-chrome
+    - google-chrome
     packages:
-      - google-chrome-stable
+    - google-chrome-stable
 language: node_js
 node_js:
-  - 8
+    - 8
+before_install: yarn global add greenkeeper-lockfile@1
 before_script:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
+    - greenkeeper-lockfile-update
+    - export DISPLAY=:99.0
+    - sh -e /etc/init.d/xvfb start
+after_script: greenkeeper-lockfile-upload
 cache:
   yarn: true
   directories:
-    - node_modules
+      - node_modules
 install:
-  - yarn
+    - yarn
 script:
-  - yarn lint
-  - yarn pretty
-  - yarn build:testapp
-  - yarn test
-  - yarn test:async:node8
-  - yarn readme:validate
+    - yarn lint
+    - yarn pretty
+    - yarn build:testapp
+    - yarn test
+    - yarn test:async:node8
+    - yarn readme:validate
+env:
+  global:
+    secure: K23eXua4WBumuVXvl8jxqpSgLOd2o2omMgjYV6udvktFmNOiKfeOICd2ag4K5nQFRwVJn9jOraMZQH9oGvb9lv5ZIgmf2qzFDiNBBujIJLWiKtKU31YKADv6YMV+9Zn/EqXWFh7QhOpB2owF9Y431FRWMN8wykpKkIKmzX6n0GUXEQX66BXUYUizt3yixflzM/tXFRuLaFN+6TeafqQvUgij0Bl8D7uMN9iloSfl5k8sf/L9xPqO1Fr7hLUBXYENxnf1vVBDvsvrfRFqiX5yCg/yVwYaYVQIwzwPW+m+tveZF6K9qOQ1BsC7JlVV3apwCu8O/u1C87YbaQ+qBfVEkYx0ayOr9bcMBNE8OZqlFkuADW0FyudYMsQjhP2LYPcGKz0nJw7nLoJSfMcUouJ8QDGrM6mfGhIiawMLy6PqPICqZLVM9IKftx5dWGfNrePt3wu9155AjurLwZB/Tu00BPSHgWm9BUly3BII+/uAjH7NV4wFmAhoJxrmMdNM2hUWC5dy3giDSovcrlpyyuV8JS9FNKql1p/Qu//CFMAMIaN0pPzxvoJY4a8nNgSwrvRaLE1HFIE6MWhtWJgQzRKvX+eULu/tJ3c7RbKhqycNqC3yN6gugjZ612sydZO3z990OA/7d4FVB4liGoOZoS6PEAOeTru6Uea54ruvz7z+b+4=

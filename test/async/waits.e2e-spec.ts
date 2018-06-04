@@ -115,7 +115,7 @@ describe('async protractor-test-helper waits', () => {
         await actionPage.navigateTo();
         await waitForUrlMatch(actionPage.urlRegex);
         await expect(browser.getCurrentUrl()).toBe(
-            'http://localhost:49152/actions'
+            'http://localhost:4200/actions'
         );
     });
 

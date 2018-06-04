@@ -17,9 +17,9 @@
     "lint": "ng lint",
     "pretest": "yarn build && yarn copy:lib",
     "test": "yarn test:flow && yarn test:async && yarn test:simplejs",
-    "test:flow": "ng e2e --config test/protractor.flow.conf --delete-output-path=false",
-    "test:async": "ng e2e --config test/protractor.async.conf --delete-output-path=false",
-    "test:async:node8": "ng e2e --config test/protractor.async.node8.conf --delete-output-path=false",
+    "test:flow": "ng e2e --protractor-config ./test/protractor.flow.conf",
+    "test:async": "ng e2e --protractor-config test/protractor.async.conf",
+    "test:async:node8": "ng e2e --protractor-config test/protractor.async.node8.conf",
     "test:simplejs": "protractor test/protractor.simplejs.conf",
     "build": "yarn clean:all && tsc -p ./tsconfig.build.json",
     "build:testapp": "ng build",
@@ -37,6 +37,7 @@
     "protractor": "~5.1.2"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "~0.6.6",
     "@angular/cli": "~6.0.7",
     "@angular/common": "^6.0.3",
     "@angular/compiler": "^6.0.3",
@@ -63,7 +64,12 @@
     "tslint": "~5.10.0",
     "typedoc": "^0.11.1",
     "typedoc-plugin-markdown": "^1.1.9",
-    "typescript": "~2.9.1",
-    "zone.js": "^0.8.19"
+    "typescript": ">=2.7.0 <2.8.0",
+    "zone.js": "^0.8.26"
+  },
+  "greenkeeper": {
+    "ignore": [
+      "typescript"
+    ]
   }
 }
