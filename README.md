@@ -1,5 +1,7 @@
 # Protractor Test Helper
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/hetznercloud/protractor-test-helper.svg)](https://greenkeeper.io/)
+
 This library provides functions which help to create robust and reliable end-to-end tests with protractor
 and reduces the pain of end-to-end tests to a minimum.
 All provided action helpers perform checks that the element is in the correct state before the actual task is performed.
