@@ -105,7 +105,7 @@ describe('flow protractor-test-helper waits', () => {
         const actionPage: ActionsPage = new ActionsPage();
         actionPage.navigateTo();
         waitForUrlMatch(actionPage.urlRegex);
-        expect(browser.getCurrentUrl()).toBe('http://localhost:49152/actions');
+        expect(browser.getCurrentUrl()).toBe('http://localhost:4200/actions');
     });
 
     it('waitForWindowCount should wait for window window number increase and decrease', () => {
