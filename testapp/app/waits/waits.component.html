@@ -1,0 +1,49 @@
+<h1>Waits</h1>
+
+<div>
+  <h2>waitForAttributeMatch</h2>
+  <div data-test="waitForAttributeMatch" [attr.test]="attrMatchValue">Div with attribute</div>
+</div>
+
+<div>
+  <h2>waitForElementCount</h2>
+  <ul data-test="waitForElementCount">
+    <li *ngFor="let value of greaterItems">{{ value }}</li>
+  </ul>
+</div>
+
+<div>
+  <h2>waitForElementCountToBeLess</h2>
+  <ul data-test="waitForElementCountToBeLess">
+    <li *ngFor="let value of lessItems">{{ value }}</li>
+  </ul>
+</div>
+
+
+<div>
+  <h2>waitForTextMatch</h2>
+  <p data-test="waitForText">
+    {{ textToMatch }}
+  </p>
+</div>
+
+<div>
+  <h2>waitToBeDisplayed</h2>
+  <div data-test="waitToBeDisplayed" *ngIf="showWaitToBeDisplayed">I'm displayed</div>
+</div>
+
+<div>
+  <h2>waitToBePresent</h2>
+  <div data-test="waitToBePresent" [hidden]="true" *ngIf="showWaitToBeDisplayed">I'm present</div>
+</div>
+
+<div>
+  <h2>waitToBeNotDisplayed</h2>
+  <div data-test="waitToBeNotDisplayed" [hidden]="hideWaitToBeNotDisplayed">I'm not hidden</div>
+</div>
+
+
+<div>
+  <h2>waitToBeNotPresent</h2>
+  <div data-test="waitToBeNotPresent" *ngIf="showWaitToBeNotPresent">I'm present</div>
+</div>

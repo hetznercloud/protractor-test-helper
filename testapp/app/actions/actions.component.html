@@ -1,0 +1,31 @@
+<h1>Action tests</h1>
+
+<div>
+  <h2>Click</h2>
+  <button data-test="click-btn" *ngIf="showClickButton" (click)="hasBeenClicked = !hasBeenClicked">Click me</button>
+  <div data-test="click-result" *ngIf="hasBeenClicked">Button was clicked</div>
+</div>
+
+<div>
+  <h2>Hover</h2>
+  <button data-test="hover-btn" *ngIf="showHoverButton" (mouseenter)="hasBeenHovered = !hasBeenHovered">Hover me</button>
+  <div data-test="hover-result" *ngIf="hasBeenHovered">Button was hovered</div>
+</div>
+
+<div>
+  <h2>Send Keys</h2>
+  <input data-test="send-keys-input"
+         *ngIf="showSendKeysInput"
+         [ngModel]="inputModel"
+         (ngModelChange)="inputModel = $event"/>
+  <div data-test="input-result">{{ inputModel }}</div>
+</div>
+
+<div>
+  <h2>Option</h2>
+  <select [(ngModel)]="selectedOption" data-test="select" *ngIf="showSelect">
+    <option *ngFor="let option of selectOptions" [value]="option">{{option}}</option>
+  </select>
+
+  <div data-test="select-result">{{ selectedOption }}</div>
+</div>
