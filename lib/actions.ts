@@ -6,7 +6,7 @@
 import { browser, by, ElementFinder, protractor } from 'protractor';
 import { Locator } from 'protractor/built/locators';
 import * as webdriver from 'selenium-webdriver';
-import { getElementFinder, sleep } from './utils';
+import { getElementFinder, sleep, log } from './utils';
 import { waitToBeDisplayed } from './waits';
 import { DEFAULT_RETRIES, DEFAULT_TIMEOUT } from './config';
 
@@ -72,6 +72,20 @@ export function hover(
                 .actions()
                 .mouseMove(e)
                 .perform();
+        })
+        .catch(() => {
+            // Fallback for
+            // https://github.com/angular/protractor/issues/4687
+            log('Fallback for hover element');
+            return browser.executeScript((element: HTMLElement) => {
+                const event = new MouseEvent('mouseenter', {
+                    view: window,
+                    bubbles: true,
+                    cancelable: true,
+                });
+
+                element.dispatchEvent(event);
+            }, e);
         })
         .then(() => {
             return sleep(500);

@@ -62,6 +62,19 @@ function hover(target, timeout) {
             .mouseMove(e)
             .perform();
     })
+        .catch(function () {
+        // Fallback for
+        // https://github.com/angular/protractor/issues/4687
+        utils_1.log('Fallback for hover element');
+        return protractor_1.browser.executeScript(function (element) {
+            var event = new MouseEvent('mouseenter', {
+                view: window,
+                bubbles: true,
+                cancelable: true,
+            });
+            element.dispatchEvent(event);
+        }, e);
+    })
         .then(function () {
         return utils_1.sleep(500);
     });

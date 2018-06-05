@@ -7,6 +7,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 var protractor_1 = require("protractor");
 var waits_1 = require("./waits");
+var actions_1 = require("./actions");
 /**
  * Scrolls to the top of the window.
  */
@@ -45,12 +46,36 @@ exports.closeWindow = closeWindow;
  * @param {string} url The URL to be opened in the window or tab
  */
 function openUrlInNewTab(url) {
-    // https://stackoverflow.com/a/47348858/621765
-    return (protractor_1.browser.driver
-        .executeScript(function () {
-        return window.open(arguments[0], '_blank');
-    }, url)
-        .then(function () { return protractor_1.browser.getAllWindowHandles(); })
+    var tempId = 'pth-openwindowlink';
+    var windowLength;
+    return (protractor_1.browser
+        .getAllWindowHandles()
+        .then(function (handles) {
+        windowLength = handles.length;
+        // Create a DOM element, other solution with window.open doesn't work on every browser because it sometimes
+        // get blocked by the popup blocker
+        return protractor_1.browser.driver.executeScript(function (url, tempId) {
+            var a = document.getElementById(tempId);
+            if (!a) {
+                a = document.createElement('a');
+                a.target = '_blank';
+                a.innerHTML = '.';
+                a.id = tempId;
+            }
+            a.href = url;
+            document.body.appendChild(a);
+            return a;
+        }, url, tempId);
+    })
+        .then(function () {
+        return actions_1.click("#" + tempId);
+    })
+        .then(function () {
+        return waits_1.waitForWindowCount(windowLength + 1);
+    })
+        .then(function () {
+        return protractor_1.browser.getAllWindowHandles();
+    })
         .then(function (handles) {
         return protractor_1.browser.switchTo().window(handles[handles.length - 1]);
     })

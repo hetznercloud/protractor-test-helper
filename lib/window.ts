@@ -4,8 +4,9 @@
  * SPDX-License-Identifier: MIT
  */
 import { browser } from 'protractor';
-import { waitForUrlMatch } from './waits';
+import { waitForUrlMatch, waitForWindowCount } from './waits';
 import * as webdriver from 'selenium-webdriver';
+import { click } from './actions';
 
 /**
  * Scrolls to the top of the window.
@@ -51,13 +52,44 @@ export function closeWindow(
 export function openUrlInNewTab(
     url: string
 ): webdriver.promise.Promise<webdriver.promise.Promise<boolean>> {
-    // https://stackoverflow.com/a/47348858/621765
+    const tempId: string = 'pth-openwindowlink';
+    let windowLength: number;
     return (
-        browser.driver
-            .executeScript(function(): Window {
-                return window.open(arguments[0], '_blank');
-            }, url)
-            .then(() => browser.getAllWindowHandles())
+        browser
+            .getAllWindowHandles()
+            // tslint:disable-next-line:no-any
+            .then((handles: any[]) => {
+                windowLength = handles.length;
+                // Create a DOM element, other solution with window.open doesn't work on every browser because it sometimes
+                // get blocked by the popup blocker
+                return browser.driver.executeScript(
+                    (url: string, tempId: string): HTMLElement => {
+                        var a: HTMLAnchorElement = document.getElementById(
+                            tempId
+                        ) as HTMLAnchorElement;
+                        if (!a) {
+                            a = document.createElement('a');
+                            a.target = '_blank';
+                            a.innerHTML = '.';
+                            a.id = tempId;
+                        }
+                        a.href = url;
+                        document.body.appendChild(a);
+                        return a;
+                    },
+                    url,
+                    tempId
+                );
+            })
+            .then(() => {
+                return click(`#${tempId}`);
+            })
+            .then(() => {
+                return waitForWindowCount(windowLength + 1);
+            })
+            .then(() => {
+                return browser.getAllWindowHandles();
+            })
             // tslint:disable-next-line:no-any
             .then((handles: any[]) => {
                 return browser.switchTo().window(handles[handles.length - 1]);

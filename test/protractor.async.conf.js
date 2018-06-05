@@ -12,7 +12,7 @@ exports.config = {
     allScriptsTimeout: 11000,
     specs: ['./async/**/*.e2e-spec.ts'],
     capabilities: {
-        browserName: 'chrome',
+        browserName: process.env.NODE_BROWSER || 'chrome',
     },
     directConnect: true,
     baseUrl: 'http://localhost:4200/',
