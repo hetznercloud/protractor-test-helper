@@ -36,7 +36,7 @@
     "doc:md": "typedoc --out ./docs/markdown ./lib --target ES5 --module commonjs --theme markdown --exclude index",
     "readme:update": "node tools/readmegenerator.js",
     "readme:validate": "yarn readme:update && git diff --exit-code",
-    "webdriver:update": "webdriver-manager update"
+    "webdriver:update": "webdriver-manager update --versions.gecko=v0.20.1"
   },
   "peerDependencies": {
     "protractor": "~5.1.2"
