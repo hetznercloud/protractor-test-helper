@@ -51,7 +51,14 @@ export function waitToBeNotDisplayed(
     return browser.wait(
         () => {
             return getElementFinder(target)
-                .isDisplayed()
+                .isPresent()
+                .then(result => {
+                    if (!result) {
+                        return false;
+                    }
+
+                    return e.isDisplayed();
+                })
                 .then((value: boolean) => !value, () => false);
         },
         timeout,
@@ -142,7 +149,7 @@ export function waitForTextToBe(
                 .then((text: string) => text === value, () => false);
         },
         timeout,
-        `Error waiting for text in ${e.locator} to be ${value}`
+        `Error waiting for text in ${e.locator()} to be ${value}`
     );
 }
 

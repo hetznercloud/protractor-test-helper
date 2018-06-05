@@ -23,7 +23,7 @@ function click(target, timeout, tryCount) {
     var e = utils_1.getElementFinder(target);
     return waits_1.waitToBeDisplayed(target, timeout)
         .then(function () {
-        return protractor_1.browser.wait(protractor_1.protractor.ExpectedConditions.elementToBeClickable(e), timeout, "Element " + e.locator + " not clickable");
+        return protractor_1.browser.wait(protractor_1.protractor.ExpectedConditions.elementToBeClickable(e), timeout, "Element " + e.locator() + " not clickable");
     })
         .then(function () { return e.click(); })
         .then(function () { }, 

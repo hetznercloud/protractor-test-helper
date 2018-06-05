@@ -26,10 +26,11 @@ cache:
       - node_modules
 install:
     - yarn
+    - yarn webdriver:update
 script:
     - yarn lint
     - yarn pretty
     - yarn build:testapp
     - yarn test:ci
-    - '[[ $(node -v) =~ ^v6.*$ ]] || yarn test:async:node8' #skip on Node 6
+    - yarn test:async:node8
     - yarn readme:validate

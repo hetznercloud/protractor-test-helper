@@ -30,7 +30,7 @@ export function click(
             return browser.wait(
                 protractor.ExpectedConditions.elementToBeClickable(e),
                 timeout,
-                `Element ${e.locator} not clickable`
+                `Element ${e.locator()} not clickable`
             );
         })
         .then(() => e.click())

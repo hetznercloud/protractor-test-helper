@@ -14,6 +14,7 @@ import {
     waitToBeDisplayed,
     waitToBePresent,
     waitToBeNotDisplayed,
+    waitToBeNotPresent,
     openUrlInNewTab,
     waitForWindowCount,
     closeWindow,
@@ -89,14 +90,22 @@ describe('flow protractor-test-helper waits', () => {
         expect(waitsPage.waitToBePresent.isPresent()).toBe(true);
     });
 
-    it('waitToBeNotDisplayed should wait for an element not to be displayed', () => {
-        waitToBeNotDisplayed(waitsPage.waitToBeNotDisplayed);
+    describe('waitToBeNotDisplayed', () => {
+        it('should not throw an error if element is not present and should handle not present the same way as not displayed', () => {
+            waitToBeNotDisplayed(waitsPage.waitToBeNotPresent);
 
-        expect(waitsPage.waitToBeNotDisplayed.isDisplayed()).toBe(false);
+            expect(waitsPage.waitToBeNotPresent.isPresent()).toBe(false);
+        });
+
+        it('waitToBeNotDisplayed should wait for an element not to be displayed', () => {
+            waitToBeNotDisplayed(waitsPage.waitToBeNotDisplayed);
+
+            expect(waitsPage.waitToBeNotDisplayed.isDisplayed()).toBe(false);
+        });
     });
 
     it('waitToBeNotPresent should wait for an element not to be present', () => {
-        waitToBePresent(waitsPage.waitToBePresent);
+        waitToBeNotPresent(waitsPage.waitToBeNotPresent);
 
         expect(waitsPage.waitToBeNotPresent.isPresent()).toBe(false);
     });
