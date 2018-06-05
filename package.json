@@ -25,6 +25,7 @@
     "test:async:firefox": "NODE_BROWSER=firefox ng e2e --protractor-config test/protractor.async.conf",
     "test:async:node8": "ng e2e --protractor-config test/protractor.async.node8.conf",
     "test:simplejs": "protractor test/protractor.simplejs.conf",
+    "test:ci": "yarn webdriver:update && yarn build && yarn copy:lib && yarn test:flow && yarn test:flow:firefox && yarn test:async && yarn test:async:firefox",
     "build": "yarn clean:all && tsc -p ./tsconfig.build.json",
     "build:testapp": "ng build",
     "clean:all": "rm -rf ./dist && yarn clean:modules",
