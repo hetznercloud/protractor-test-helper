@@ -43,7 +43,7 @@
     "webdriver:update": "webdriver-manager update || echo \"Failed to update webdriver\""
   },
   "peerDependencies": {
-    "protractor": "~5.1.2"
+    "protractor": ">=5.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.6.6",
