@@ -41,7 +41,13 @@ function waitToBeNotDisplayed(target, timeout) {
     // Don't use EC.invisibilityOf(e) because it doesn't return a promise which we can catch
     return protractor_1.browser.wait(function () {
         return utils_1.getElementFinder(target)
-            .isDisplayed()
+            .isPresent()
+            .then(function (result) {
+            if (!result) {
+                return false;
+            }
+            return e.isDisplayed();
+        })
             .then(function (value) { return !value; }, function () { return false; });
     }, timeout, "Element " + e.locator() + " is still displayed");
 }
@@ -110,7 +116,7 @@ function waitForTextToBe(target, value, timeout) {
             return utils_1.getElementFinder(target).getText();
         })
             .then(function (text) { return text === value; }, function () { return false; });
-    }, timeout, "Error waiting for text in " + e.locator + " to be " + value);
+    }, timeout, "Error waiting for text in " + e.locator() + " to be " + value);
 }
 exports.waitForTextToBe = waitForTextToBe;
 /**

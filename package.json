@@ -15,9 +15,9 @@
     "ng": "ng",
     "start": "ng serve",
     "lint": "ng lint",
-    "pretest": "yarn webdriver:update && yarn build && yarn copy:lib",
-    "test": "yarn test:flow && yarn test:async && yarn test:simplejs",
-    "test:firefox": "yarn webdriver:update && yarn test:flow:firefox && yarn test:async:firefox",
+    "pretest": "yarn build && yarn copy:lib",
+    "test": "yarn test:flow && yarn test:flow:firefox && yarn test:async && yarn test:async:firefox",
+    "test:firefox": "yarn test:flow:firefox && yarn test:async:firefox",
     "pretest:firefox": "yarn build && yarn copy:lib",
     "test:flow": "ng e2e --protractor-config ./test/protractor.flow.conf",
     "test:flow:firefox": "NODE_BROWSER=firefox ng e2e --protractor-config ./test/protractor.flow.conf",
@@ -25,7 +25,7 @@
     "test:async:firefox": "NODE_BROWSER=firefox ng e2e --protractor-config test/protractor.async.conf",
     "test:async:node8": "ng e2e --protractor-config test/protractor.async.node8.conf",
     "test:simplejs": "protractor test/protractor.simplejs.conf",
-    "test:ci": "yarn webdriver:update && yarn build && yarn copy:lib && yarn test:flow && yarn test:flow:firefox && yarn test:async && yarn test:async:firefox",
+    "test:ci": "yarn build && yarn copy:lib && yarn test:flow && yarn test:async",
     "build": "yarn clean:all && tsc -p ./tsconfig.build.json",
     "build:testapp": "ng build",
     "clean:all": "rm -rf ./dist && yarn clean:modules",
@@ -36,7 +36,7 @@
     "doc:md": "typedoc --out ./docs/markdown ./lib --target ES5 --module commonjs --theme markdown --exclude index",
     "readme:update": "node tools/readmegenerator.js",
     "readme:validate": "yarn readme:update && git diff --exit-code",
-    "webdriver:update": "webdriver-manager update --versions.gecko=v0.20.1"
+    "webdriver:update": "webdriver-manager update || echo \"Failed to update webdriver\""
   },
   "peerDependencies": {
     "protractor": "~5.1.2"

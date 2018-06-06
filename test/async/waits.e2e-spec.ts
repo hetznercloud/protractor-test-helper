@@ -14,6 +14,7 @@ import {
     waitToBeDisplayed,
     waitToBePresent,
     waitToBeNotDisplayed,
+    waitToBeNotPresent,
     openUrlInNewTab,
     waitForWindowCount,
     closeWindow,
@@ -98,14 +99,24 @@ describe('async protractor-test-helper waits', () => {
         await expect(waitsPage.waitToBePresent.isPresent()).toBe(true);
     });
 
-    it('waitToBeNotDisplayed should wait for an element not to be displayed', async () => {
-        await waitToBeNotDisplayed(waitsPage.waitToBeNotDisplayed);
+    describe('waitToBeNotDisplayed', () => {
+        it('should not throw an error if element is not present and should handle not present the same way as not displayed', async () => {
+            await waitToBeNotDisplayed(waitsPage.waitToBeNotPresent);
 
-        await expect(waitsPage.waitToBeNotDisplayed.isDisplayed()).toBe(false);
+            await expect(waitsPage.waitToBeNotPresent.isPresent()).toBe(false);
+        });
+
+        it('waitToBeNotDisplayed should wait for an element not to be displayed', async () => {
+            await waitToBeNotDisplayed(waitsPage.waitToBeNotDisplayed);
+
+            await expect(waitsPage.waitToBeNotDisplayed.isDisplayed()).toBe(
+                false
+            );
+        });
     });
 
     it('waitToBeNotPresent should wait for an element not to be present', async () => {
-        await waitToBePresent(waitsPage.waitToBePresent);
+        await waitToBeNotPresent(waitsPage.waitToBeNotPresent);
 
         await expect(waitsPage.waitToBeNotPresent.isPresent()).toBe(false);
     });
