@@ -9,6 +9,10 @@
     "test",
     "testing"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hetznercloud/protractor-test-helper"
+  },
   "main": "dist",
   "types": "dist",
   "scripts": {
