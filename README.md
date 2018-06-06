@@ -57,7 +57,15 @@ For more examples please have a look into the `test` folder.
 
 <a id="installation"></a>
 ## Installation
-Currently there is no version on npm. We are preparing some things and after that we push it to npm. Stay tuned :).
+```bash
+npm install @hetznercloud/protractor-test-helper --save-dev
+```
+
+or
+
+```bash
+yarn add @hetznercloud/protractor-test-helper -D
+```
 
 <a id="contributing"></a>
 ## Contributing
