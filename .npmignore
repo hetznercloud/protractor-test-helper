@@ -1,0 +1,17 @@
+tools/
+testapp/
+test/
+lib/
+_docs/
+.prettierignore
+.editorconfig
+.prettierrc
+.travis.yml
+angular.json
+tsconfig.build.json
+tsconfig.json
+tslint.json
+yarn.lock
+yarn-error.log
+.idea
+tmp/

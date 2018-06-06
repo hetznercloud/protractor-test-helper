@@ -1,5 +1,5 @@
 {
-  "name": "protractor-test-helper",
+  "name": "@hetznercloud/protractor-test-helper",
   "version": "0.1.0",
   "license": "MIT",
   "keywords": [
