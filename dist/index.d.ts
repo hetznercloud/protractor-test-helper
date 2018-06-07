@@ -1,3 +1,4 @@
+/// <reference path="jasmine.d.ts" />
 /**
  * Copyright (c) 2018 Hetzner Cloud GmbH
  *
@@ -8,3 +9,4 @@ export * from './utils';
 export * from './waits';
 export * from './window';
 export * from './actions';
+export * from './matchers';

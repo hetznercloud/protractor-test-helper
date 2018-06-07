@@ -14,6 +14,7 @@ All provided action helpers perform checks that the element is in the correct st
 * Helper to open and close windows, tabs, popups, etc
 * Utilities like the `flowLog` function, which logs exactly in the moment when it is expected to log: when the previous web driver action was performed, and not when the `it` block is called.
 * Most of the actions have a retry logic inside, which retries the action 3 (or configurable number of) times before an error is thrown
+* Custom matcher like `.toBePresent()` or `toBeDisplayed()`; 
 * Provides better error messages with more details
 * All functions which interact with elements accept either `ElementFinder`, `Locator` or `string` as target parameter
 * Ready for tests written with [`async` / `await`](https://github.com/angular/protractor/blob/master/docs/async-await.md) (every function returns a promise)
@@ -24,6 +25,7 @@ All provided action helpers perform checks that the element is in the correct st
 * [Installation](#installation)
 * [Contributing](#contributing)
 * [License](#license)
+* [Matchers](#matchers)
 * [API](#api)
 
 <a id="example"></a>
@@ -67,6 +69,17 @@ or
 yarn add @hetznercloud/protractor-test-helper -D
 ```
 
+To use the matcher you have to call the install function in you `protractor.config`:
+
+```js
+exports.config = {
+    onPrepare() {
+        //...
+        require('protractor-test-helper/').installMatcher();
+    },
+};
+```
+
 <a id="contributing"></a>
 ## Contributing
 Pull requests are warmly welcome. Minor fixes will be merged as soon as possible.
@@ -100,3 +113,11 @@ Please do not make changes directly in the `README.md` file.
 <a id="license"></a>
 ## License
 MIT license
+
+<a id="matchers"></a>
+
+## Matchers
+```js
+expect(ElementFinder | Locator | string).toBeDisplayed();
+expect(ElementFinder | Locator | string).toBePresent();
+```

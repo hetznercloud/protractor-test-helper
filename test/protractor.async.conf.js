@@ -27,6 +27,7 @@ exports.config = {
         require('ts-node').register({
             project: 'test/tsconfig.e2e.json',
         });
+        require('protractor-test-helper/').installMatcher();
         jasmine
             .getEnv()
             .addReporter(
