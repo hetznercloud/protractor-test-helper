@@ -8,8 +8,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
  *
  * SPDX-License-Identifier: MIT
  */
+/// <reference path="./jasmine.ts" />
 __export(require("./helper"));
 __export(require("./utils"));
 __export(require("./waits"));
 __export(require("./window"));
 __export(require("./actions"));
+__export(require("./matchers"));
