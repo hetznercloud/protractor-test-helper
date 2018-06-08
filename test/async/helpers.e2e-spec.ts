@@ -3,10 +3,13 @@
  *
  * SPDX-License-Identifier: MIT
  */
-import { getText, getElementAttributeValue } from 'protractor-test-helper';
+import {
+    getText,
+    getElementAttributeValue,
+} from '@hetznercloud/protractor-test-helper';
 import { HelpersPage } from '../pages/helpers.po';
 
-describe('async protractor-test-helper helpers', () => {
+describe('async helpers', () => {
     const helpersPage: HelpersPage = new HelpersPage();
 
     beforeEach(async () => {

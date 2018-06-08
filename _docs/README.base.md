@@ -75,7 +75,7 @@ To use the matcher you have to call the install function in your `protractor.con
 exports.config = {
     onPrepare() {
         //...
-        require('protractor-test-helper/').installMatcher();
+        require('@hetznercloud/protractor-test-helper/').installMatcher();
     },
 };
 ```

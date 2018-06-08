@@ -3,7 +3,7 @@ const {
     waitForTextToBe,
     sendKeys,
     getText,
-} = require('protractor-test-helper');
+} = require('@hetznercloud/protractor-test-helper');
 
 // If you change something here, please update _/docs/README.base.md, too
 describe('readme example', () => {

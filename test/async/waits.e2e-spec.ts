@@ -21,12 +21,12 @@ import {
     waitForUrlMatch,
     getWindowHandlesCount,
     getElementAttributeValue,
-} from 'protractor-test-helper';
+} from '@hetznercloud/protractor-test-helper';
 import { WaitsPage } from '../pages/waits.po';
 import { ActionsPage } from '../pages/actions.po';
 import { browser } from 'protractor';
 
-describe('async protractor-test-helper waits', () => {
+describe('async waits', () => {
     const waitsPage: WaitsPage = new WaitsPage();
 
     beforeEach(async () => {
