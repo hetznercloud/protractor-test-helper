@@ -14,10 +14,10 @@ import {
     selectOption,
     selectOptionByIndex,
     selectOptionByText,
-} from 'protractor-test-helper';
+} from '@hetznercloud/protractor-test-helper';
 import { element, by, browser } from 'protractor';
 
-describe('async protractor-test-helper actions', () => {
+describe('async actions', () => {
     const actionsPage: ActionsPage = new ActionsPage();
 
     beforeEach(async () => {

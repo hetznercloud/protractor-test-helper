@@ -19,12 +19,12 @@ import {
     waitForWindowCount,
     closeWindow,
     waitForUrlMatch,
-} from 'protractor-test-helper';
+} from '@hetznercloud/protractor-test-helper';
 import { WaitsPage } from '../pages/waits.po';
 import { ActionsPage } from '../pages/actions.po';
 import { browser } from 'protractor';
 
-describe('flow protractor-test-helper waits', () => {
+describe('flow waits', () => {
     const waitsPage: WaitsPage = new WaitsPage();
 
     beforeEach(() => {

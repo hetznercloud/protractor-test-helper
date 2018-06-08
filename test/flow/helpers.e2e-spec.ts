@@ -7,11 +7,11 @@ import {
     getText,
     getElementAttributeValue,
     flowLog,
-} from 'protractor-test-helper';
+} from '@hetznercloud/protractor-test-helper';
 import { HelpersPage } from '../pages/helpers.po';
 import { browser } from 'protractor';
 
-describe('flow protractor-test-helper helpers', () => {
+describe('flow helpers', () => {
     const helpersPage: HelpersPage = new HelpersPage();
 
     beforeEach(() => {

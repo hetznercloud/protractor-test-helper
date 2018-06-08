@@ -8,12 +8,12 @@ import {
     waitToBePresent,
     waitToBeNotDisplayed,
     waitToBeNotPresent,
-} from 'protractor-test-helper';
+} from '@hetznercloud/protractor-test-helper';
 import { WaitsPage } from '../pages/waits.po';
 import { ActionsPage } from '../pages/actions.po';
 import { browser } from 'protractor';
 
-describe('flow protractor-test-helper matcher', () => {
+describe('flow matcher', () => {
     const waitsPage: WaitsPage = new WaitsPage();
 
     beforeEach(() => {
