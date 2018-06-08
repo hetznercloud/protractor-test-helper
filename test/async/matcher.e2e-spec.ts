@@ -30,7 +30,7 @@ describe('async protractor-test-helper matcher', () => {
             await expect(waitsPage.waitToBeNotDisplayed).not.toBeDisplayed();
         });
 
-        it('should expect element not to be when it is only present', async () => {
+        it('should expect element not to be displayed when it is only present', async () => {
             await waitToBePresent(waitsPage.waitToBePresent);
             await expect(waitsPage.waitToBePresent).not.toBeDisplayed();
         });
@@ -51,7 +51,7 @@ describe('async protractor-test-helper matcher', () => {
             await expect(waitsPage.waitToBeNotPresent).not.toBePresent();
         });
 
-        it('should expect element to be displayed', async () => {
+        it('should expect element to be present when it is displayed', async () => {
             await waitToBeDisplayed(waitsPage.waitToBeDisplayed);
             await expect(waitsPage.waitToBeDisplayed).toBePresent();
         });

@@ -69,7 +69,7 @@ or
 yarn add @hetznercloud/protractor-test-helper -D
 ```
 
-To use the matcher you have to call the install function in you `protractor.config`:
+To use the matcher you have to call the install function in your `protractor.config`:
 
 ```js
 exports.config = {

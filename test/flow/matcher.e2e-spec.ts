@@ -30,7 +30,7 @@ describe('flow protractor-test-helper matcher', () => {
             expect(waitsPage.waitToBeNotDisplayed).not.toBeDisplayed();
         });
 
-        it('should expect element not to be when it is only present', () => {
+        it('should expect element not to displayed be when it is only present', () => {
             waitToBePresent(waitsPage.waitToBePresent);
             expect(waitsPage.waitToBePresent).not.toBeDisplayed();
         });
@@ -51,7 +51,7 @@ describe('flow protractor-test-helper matcher', () => {
             expect(waitsPage.waitToBeNotPresent).not.toBePresent();
         });
 
-        it('should expect element to be displayed', () => {
+        it('should expect element to be present when it is displayed', () => {
             waitToBeDisplayed(waitsPage.waitToBeDisplayed);
             expect(waitsPage.waitToBeDisplayed).toBePresent();
         });

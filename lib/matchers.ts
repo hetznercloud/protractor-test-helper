@@ -12,6 +12,7 @@ export function installMatcher(): void {
         jasmine.addMatchers({
             toBePresent(): AsyncCustomMatcher {
                 return {
+                    // tslint:disable-next-line no-any
                     compare(actual: ElementFinder | Locator | string): any {
                         const e: ElementFinder = getElementFinder(actual);
                         let pass: boolean;
