@@ -6,6 +6,7 @@ function installMatcher() {
         jasmine.addMatchers({
             toBePresent: function () {
                 return {
+                    // tslint:disable-next-line no-any
                     compare: function (actual) {
                         var e = utils_1.getElementFinder(actual);
                         var pass;
