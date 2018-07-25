@@ -16,6 +16,15 @@ export function scrollTop(): webdriver.promise.Promise<void> {
 }
 
 /**
+ * Scrolls to the bottom of the window.
+ */
+export function scrollBottom(): webdriver.promise.Promise<void> {
+    return browser.executeScript(
+        'window.scrollTo(0, document.body.scrollHeight);'
+    );
+}
+
+/**
  * Closes a browser window, popup, or tab identified by its zero-based index.
  * If two windows are open and the second window is to be closed, the index
  * should be 1.

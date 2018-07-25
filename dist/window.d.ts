@@ -4,6 +4,10 @@ import * as webdriver from 'selenium-webdriver';
  */
 export declare function scrollTop(): webdriver.promise.Promise<void>;
 /**
+ * Scrolls to the bottom of the window.
+ */
+export declare function scrollBottom(): webdriver.promise.Promise<void>;
+/**
  * Closes a browser window, popup, or tab identified by its zero-based index.
  * If two windows are open and the second window is to be closed, the index
  * should be 1.
