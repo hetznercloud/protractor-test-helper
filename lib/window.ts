@@ -19,7 +19,9 @@ export function scrollTop(): webdriver.promise.Promise<void> {
  * Scrolls to the bottom of the window.
  */
 export function scrollBottom(): webdriver.promise.Promise<void> {
-    return browser.executeScript('window.scrollTo(0, document.body.scrollHeight);');
+    return browser.executeScript(
+        'window.scrollTo(0, document.body.scrollHeight);'
+    );
 }
 
 /**
