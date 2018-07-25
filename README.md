@@ -574,6 +574,17 @@ Opens the passed URL in a new tab.
 **Returns:** `Promise`<`Promise`<`boolean`>>
 
 ___
+<a id="scrollbottom"></a>
+
+####  scrollBottom
+
+▸ **scrollBottom**(): `Promise`<`void`>
+
+Scrolls to the bottom of the window.
+
+**Returns:** `Promise`<`void`>
+
+___
 <a id="scrolltop"></a>
 
 ####  scrollTop
