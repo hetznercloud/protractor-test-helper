@@ -14,7 +14,7 @@ var config_1 = require("./config");
  *
  * @param {ElementFinder | Locator | string} target
  * @param {number} timeout Timeout in milliseconds
- * @returns {promise.Promise<promise.Promise<boolean>>}
+ * @returns {promise.Promise<boolean>}
  */
 function waitToBeNotPresent(target, timeout) {
     if (timeout === void 0) { timeout = config_1.DEFAULT_TIMEOUT; }
@@ -33,7 +33,7 @@ exports.waitToBeNotPresent = waitToBeNotPresent;
  *
  * @param {ElementFinder | Locator | string} target Target element
  * @param {number} timeout Timeout in milliseconds
- * @returns {promise.Promise<promise.Promise<boolean>>}
+ * @returns {promise.Promise<boolean>}
  */
 function waitToBeNotDisplayed(target, timeout) {
     if (timeout === void 0) { timeout = config_1.DEFAULT_TIMEOUT; }
@@ -58,7 +58,7 @@ exports.waitToBeNotDisplayed = waitToBeNotDisplayed;
  *
  * @param {ElementFinder | Locator | string} target Target element
  * @param {number} timeout Timeout in milliseconds
- * @returns {promise.Promise<promise.Promise<boolean>>}
+ * @returns {promise.Promise<boolean>}
  */
 function waitToBePresent(target, timeout) {
     if (timeout === void 0) { timeout = config_1.DEFAULT_TIMEOUT; }
@@ -77,7 +77,7 @@ exports.waitToBePresent = waitToBePresent;
  *
  * @param {ElementFinder | Locator | string} target
  * @param {number} timeout Timeout in milliseconds
- * @returns {promise.Promise<promise.Promise<boolean>>}
+ * @returns {promise.Promise<boolean>}
  */
 function waitToBeDisplayed(target, timeout) {
     if (timeout === void 0) { timeout = config_1.DEFAULT_TIMEOUT; }
@@ -104,7 +104,7 @@ exports.waitToBeDisplayed = waitToBeDisplayed;
  * @param {ElementFinder | Locator | string} target Target element
  * @param {string} value The string we are waiting for
  * @param {number} timeout Timeout in milliseconds
- * @returns {promise.Promise<promise.Promise<boolean>>}
+ * @returns {promise.Promise<boolean>}
  */
 function waitForTextToBe(target, value, timeout) {
     if (timeout === void 0) { timeout = config_1.DEFAULT_TIMEOUT; }
@@ -125,7 +125,7 @@ exports.waitForTextToBe = waitForTextToBe;
  * @param {ElementFinder | Locator | string} target
  * @param {RegExp} value The RegExp which the content of the target should match
  * @param {number} timeout Timeout in milliseconds
- * @returns {promise.Promise<promise.Promise<boolean>>}
+ * @returns {promise.Promise<boolean>}
  */
 function waitForTextMatch(target, value, timeout) {
     if (timeout === void 0) { timeout = config_1.DEFAULT_TIMEOUT; }
@@ -143,7 +143,7 @@ exports.waitForTextMatch = waitForTextMatch;
  * @param {string} attr Attribute name
  * @param {string} value Value which the attribute should have
  * @param {number} timeout Timeout in milliseconds
- * @returns {promise.Promise<promise.Promise<boolean>>}
+ * @returns {promise.Promise<boolean>}
  */
 function waitForAttributeToBe(target, attr, value, timeout) {
     if (timeout === void 0) { timeout = config_1.DEFAULT_TIMEOUT; }
@@ -161,7 +161,7 @@ exports.waitForAttributeToBe = waitForAttributeToBe;
  * @param {string} attr Attribute name
  * @param {RegExp} value RegExp which the attribute's value should match
  * @param {number} timeout Timeout in milliseconds
- * @returns {promise.Promise<promise.Promise<boolean>>}
+ * @returns {promise.Promise<boolean>}
  */
 function waitForAttributeMatch(target, attr, value, timeout) {
     if (timeout === void 0) { timeout = config_1.DEFAULT_TIMEOUT; }
@@ -177,7 +177,7 @@ exports.waitForAttributeMatch = waitForAttributeMatch;
  *
  * @param {RegExp} value RegExp which the URL should match
  * @param {number} timeout Timeout in milliseconds
- * @returns {promise.Promise<promise.Promise<boolean>>}
+ * @returns {promise.Promise<boolean>}
  */
 function waitForUrlMatch(value, timeout) {
     if (timeout === void 0) { timeout = config_1.DEFAULT_TIMEOUT; }
@@ -195,7 +195,7 @@ exports.waitForUrlMatch = waitForUrlMatch;
  * @param {ElementFinder | Locator | string} target Target selector or ElementArryFinder
  * @param {number} expected Number of the expected elements
  * @param {number} timeout Timeout in milliseconds
- * @returns {promise.Promise<promise.Promise<boolean>>}
+ * @returns {promise.Promise<boolean>}
  */
 function waitForElementCountToBe(target, expected, timeout) {
     if (timeout === void 0) { timeout = config_1.DEFAULT_TIMEOUT; }
@@ -215,7 +215,7 @@ exports.waitForElementCountToBe = waitForElementCountToBe;
  * @param {ElementFinder | Locator | string} target Target selector or ElementArrayFinder
  * @param {number} expected Expected number of elements
  * @param {number} timeout Timeout in milliseconds
- * @returns {promise.Promise<promise.Promise<boolean>>}
+ * @returns {promise.Promise<boolean>}
  */
 function waitForElementCountToBeGreaterThan(target, expected, timeout) {
     if (timeout === void 0) { timeout = config_1.DEFAULT_TIMEOUT; }
@@ -235,7 +235,7 @@ exports.waitForElementCountToBeGreaterThan = waitForElementCountToBeGreaterThan;
  * @param {ElementFinder | Locator | string} target Target selector or ElementArrayFinder
  * @param {number} expected Should be less than the expected number of elements
  * @param {number} timeout Timeout in milliseconds
- * @returns {promise.Promise<promise.Promise<boolean>>}
+ * @returns {promise.Promise<boolean>}
  */
 function waitForElementCountToBeLessThan(target, expected, timeout) {
     if (timeout === void 0) { timeout = config_1.DEFAULT_TIMEOUT; }
@@ -252,7 +252,7 @@ exports.waitForElementCountToBeLessThan = waitForElementCountToBeLessThan;
  *
  * @param {number} count Expected number of windows
  * @param {number} timeout Timeout in milliseconds
- * @returns {promise.Promise<promise.Promise<boolean>>}
+ * @returns {promise.Promise<boolean>}
  */
 function waitForWindowCount(count, timeout) {
     if (timeout === void 0) { timeout = config_1.DEFAULT_TIMEOUT; }

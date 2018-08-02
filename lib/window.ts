@@ -60,7 +60,7 @@ export function closeWindow(
  */
 export function openUrlInNewTab(
     url: string
-): webdriver.promise.Promise<webdriver.promise.Promise<boolean>> {
+): webdriver.promise.Promise<boolean> {
     const tempId: string = 'pth-openwindowlink';
     let windowLength: number;
     return (

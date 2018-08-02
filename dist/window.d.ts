@@ -20,4 +20,4 @@ export declare function closeWindow(index?: number): webdriver.promise.Promise<v
  *
  * @param {string} url The URL to be opened in the window or tab
  */
-export declare function openUrlInNewTab(url: string): webdriver.promise.Promise<webdriver.promise.Promise<boolean>>;
+export declare function openUrlInNewTab(url: string): webdriver.promise.Promise<boolean>;

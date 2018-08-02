@@ -246,7 +246,7 @@ ___
 
 ####  waitForAttributeMatch
 
-▸ **waitForAttributeMatch**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, attr: *`string`*, value: *`RegExp`*, timeout?: *`number`*): `Promise`<`Promise`<`boolean`>>
+▸ **waitForAttributeMatch**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, attr: *`string`*, value: *`RegExp`*, timeout?: *`number`*): `Promise`<`boolean`>
 
 Wait for an element's attribute value to match a regular expression.
 
@@ -259,14 +259,14 @@ Wait for an element's attribute value to match a regular expression.
 | value | `RegExp` | - |  RegExp which the attribute's value should match |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
 
-**Returns:** `Promise`<`Promise`<`boolean`>>
+**Returns:** `Promise`<`boolean`>
 
 ___
 <a id="waitforattributetobe"></a>
 
 ####  waitForAttributeToBe
 
-▸ **waitForAttributeToBe**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, attr: *`string`*, value: *`string`*, timeout?: *`number`*): `Promise`<`Promise`<`boolean`>>
+▸ **waitForAttributeToBe**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, attr: *`string`*, value: *`string`*, timeout?: *`number`*): `Promise`<`boolean`>
 
 Wait for an element's attribute to have the given value.
 
@@ -279,14 +279,14 @@ Wait for an element's attribute to have the given value.
 | value | `string` | - |  Value which the attribute should have |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
 
-**Returns:** `Promise`<`Promise`<`boolean`>>
+**Returns:** `Promise`<`boolean`>
 
 ___
 <a id="waitforelementcounttobe"></a>
 
 ####  waitForElementCountToBe
 
-▸ **waitForElementCountToBe**(target: * `ElementArrayFinder` &#124; `Locator` &#124; `string`*, expected: *`number`*, timeout?: *`number`*): `Promise`<`Promise`<`boolean`>>
+▸ **waitForElementCountToBe**(target: * `ElementArrayFinder` &#124; `Locator` &#124; `string`*, expected: *`number`*, timeout?: *`number`*): `Promise`<`boolean`>
 
 Waits that a selector resolves to the expected number of elements. Useful e.g. to verify that the expected number of items have been added to a list.
 
@@ -298,14 +298,14 @@ Waits that a selector resolves to the expected number of elements. Useful e.g. t
 | expected | `number` | - |  Number of the expected elements |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
 
-**Returns:** `Promise`<`Promise`<`boolean`>>
+**Returns:** `Promise`<`boolean`>
 
 ___
 <a id="waitforelementcounttobegreaterthan"></a>
 
 ####  waitForElementCountToBeGreaterThan
 
-▸ **waitForElementCountToBeGreaterThan**(target: * `ElementArrayFinder` &#124; `Locator` &#124; `string`*, expected: *`number`*, timeout?: *`number`*): `Promise`<`Promise`<`boolean`>>
+▸ **waitForElementCountToBeGreaterThan**(target: * `ElementArrayFinder` &#124; `Locator` &#124; `string`*, expected: *`number`*, timeout?: *`number`*): `Promise`<`boolean`>
 
 Waits that a selector resolves to more than the expected count of elements. Useful e.g. to verify that at least some number of items have been added to a list.
 
@@ -317,14 +317,14 @@ Waits that a selector resolves to more than the expected count of elements. Usef
 | expected | `number` | - |  Expected number of elements |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
 
-**Returns:** `Promise`<`Promise`<`boolean`>>
+**Returns:** `Promise`<`boolean`>
 
 ___
 <a id="waitforelementcounttobelessthan"></a>
 
 ####  waitForElementCountToBeLessThan
 
-▸ **waitForElementCountToBeLessThan**(target: * `ElementArrayFinder` &#124; `Locator` &#124; `string`*, expected: *`number`*, timeout?: *`number`*): `Promise`<`Promise`<`boolean`>>
+▸ **waitForElementCountToBeLessThan**(target: * `ElementArrayFinder` &#124; `Locator` &#124; `string`*, expected: *`number`*, timeout?: *`number`*): `Promise`<`boolean`>
 
 Waits that a selector resolves to less than the expected count of elements. Useful e.g. to verify that at least some elements have been removed from a list.
 
@@ -336,14 +336,14 @@ Waits that a selector resolves to less than the expected count of elements. Usef
 | expected | `number` | - |  Should be less than the expected number of elements |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
 
-**Returns:** `Promise`<`Promise`<`boolean`>>
+**Returns:** `Promise`<`boolean`>
 
 ___
 <a id="waitfortextmatch"></a>
 
 ####  waitForTextMatch
 
-▸ **waitForTextMatch**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, value: *`RegExp`*, timeout?: *`number`*): `Promise`<`Promise`<`boolean`>>
+▸ **waitForTextMatch**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, value: *`RegExp`*, timeout?: *`number`*): `Promise`<`boolean`>
 
 Wait for an element's text content to match a regular expression.
 
@@ -355,14 +355,14 @@ Wait for an element's text content to match a regular expression.
 | value | `RegExp` | - |  The RegExp which the content of the target should match |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
 
-**Returns:** `Promise`<`Promise`<`boolean`>>
+**Returns:** `Promise`<`boolean`>
 
 ___
 <a id="waitfortexttobe"></a>
 
 ####  waitForTextToBe
 
-▸ **waitForTextToBe**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, value: *`string`*, timeout?: *`number`*): `Promise`<`Promise`<`boolean`>>
+▸ **waitForTextToBe**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, value: *`string`*, timeout?: *`number`*): `Promise`<`boolean`>
 
 Wait for an element's text content to equal the given value.
 
@@ -374,14 +374,14 @@ Wait for an element's text content to equal the given value.
 | value | `string` | - |  The string we are waiting for |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
 
-**Returns:** `Promise`<`Promise`<`boolean`>>
+**Returns:** `Promise`<`boolean`>
 
 ___
 <a id="waitforurlmatch"></a>
 
 ####  waitForUrlMatch
 
-▸ **waitForUrlMatch**(value: *`RegExp`*, timeout?: *`number`*): `Promise`<`Promise`<`boolean`>>
+▸ **waitForUrlMatch**(value: *`RegExp`*, timeout?: *`number`*): `Promise`<`boolean`>
 
 Wait for the browser's URL to match a regular expression.
 
@@ -392,14 +392,14 @@ Wait for the browser's URL to match a regular expression.
 | value | `RegExp` | - |  RegExp which the URL should match |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
 
-**Returns:** `Promise`<`Promise`<`boolean`>>
+**Returns:** `Promise`<`boolean`>
 
 ___
 <a id="waitforwindowcount"></a>
 
 ####  waitForWindowCount
 
-▸ **waitForWindowCount**(count: *`number`*, timeout?: *`number`*): `Promise`<`Promise`<`boolean`>>
+▸ **waitForWindowCount**(count: *`number`*, timeout?: *`number`*): `Promise`<`boolean`>
 
 Waits for a window count. Useful e.g. for confirming that a popup window was opened.
 
@@ -410,14 +410,14 @@ Waits for a window count. Useful e.g. for confirming that a popup window was ope
 | count | `number` | - |  Expected number of windows |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
 
-**Returns:** `Promise`<`Promise`<`boolean`>>
+**Returns:** `Promise`<`boolean`>
 
 ___
 <a id="waittobedisplayed"></a>
 
 ####  waitToBeDisplayed
 
-▸ **waitToBeDisplayed**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, timeout?: *`number`*): `Promise`<`Promise`<`boolean`>>
+▸ **waitToBeDisplayed**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, timeout?: *`number`*): `Promise`<`boolean`>
 
 Wait for an element to be displayed. Displayed means that it is part of the DOM **and** visible.
 
@@ -428,14 +428,14 @@ Wait for an element to be displayed. Displayed means that it is part of the DOM 
 | target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  - |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
 
-**Returns:** `Promise`<`Promise`<`boolean`>>
+**Returns:** `Promise`<`boolean`>
 
 ___
 <a id="waittobenotdisplayed"></a>
 
 ####  waitToBeNotDisplayed
 
-▸ **waitToBeNotDisplayed**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, timeout?: *`number`*): `Promise`<`Promise`<`boolean`>>
+▸ **waitToBeNotDisplayed**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, timeout?: *`number`*): `Promise`<`boolean`>
 
 Wait for an element to be not displayed. An element which is not displayed could still be part of the DOM, but is hidden by a css rule.
 
@@ -446,14 +446,14 @@ Wait for an element to be not displayed. An element which is not displayed could
 | target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Target element |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
 
-**Returns:** `Promise`<`Promise`<`boolean`>>
+**Returns:** `Promise`<`boolean`>
 
 ___
 <a id="waittobenotpresent"></a>
 
 ####  waitToBeNotPresent
 
-▸ **waitToBeNotPresent**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, timeout?: *`number`*): `Promise`<`Promise`<`boolean`>>
+▸ **waitToBeNotPresent**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, timeout?: *`number`*): `Promise`<`boolean`>
 
 Wait for an element not to be present. Not present means that this element does not exist in the DOM.
 
@@ -464,14 +464,14 @@ Wait for an element not to be present. Not present means that this element does 
 | target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  - |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
 
-**Returns:** `Promise`<`Promise`<`boolean`>>
+**Returns:** `Promise`<`boolean`>
 
 ___
 <a id="waittobepresent"></a>
 
 ####  waitToBePresent
 
-▸ **waitToBePresent**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, timeout?: *`number`*): `Promise`<`Promise`<`boolean`>>
+▸ **waitToBePresent**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, timeout?: *`number`*): `Promise`<`boolean`>
 
 Wait for an element to be present. Present means the element is part of the DOM, but still might be hidden by CSS rules.
 
@@ -482,7 +482,7 @@ Wait for an element to be present. Present means the element is part of the DOM,
 | target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Target element |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
 
-**Returns:** `Promise`<`Promise`<`boolean`>>
+**Returns:** `Promise`<`boolean`>
 
 ___
 
@@ -561,7 +561,7 @@ ___
 
 ####  openUrlInNewTab
 
-▸ **openUrlInNewTab**(url: *`string`*): `Promise`<`Promise`<`boolean`>>
+▸ **openUrlInNewTab**(url: *`string`*): `Promise`<`boolean`>
 
 Opens the passed URL in a new tab.
 
@@ -571,7 +571,7 @@ Opens the passed URL in a new tab.
 | ------ | ------ | ------ |
 | url | `string` |  The URL to be opened in the window or tab |
 
-**Returns:** `Promise`<`Promise`<`boolean`>>
+**Returns:** `Promise`<`boolean`>
 
 ___
 <a id="scrollbottom"></a>
