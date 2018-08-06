@@ -1,5 +1,5 @@
 # Protractor Test Helper
-
+[![npm version](https://badge.fury.io/js/%40hetznercloud%2Fprotractor-test-helper.svg)](https://www.npmjs.com/package/@hetznercloud/protractor-test-helper)
 [![Build Status](https://travis-ci.com/hetznercloud/protractor-test-helper.svg?branch=master)](https://travis-ci.com/hetznercloud/protractor-test-helper)
 [![Greenkeeper badge](https://badges.greenkeeper.io/hetznercloud/protractor-test-helper.svg)](https://greenkeeper.io/)
 
