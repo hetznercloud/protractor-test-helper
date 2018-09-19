@@ -63,9 +63,11 @@ async function generateDoc(docConfig: DocConfig): Promise<string> {
 
 async function generateDocs(docsConfig: DocConfig[]): Promise<string> {
     const docs: string[] = await Promise.all(
-        docFiles.map(async (docConfig: DocConfig): Promise<string> => {
-            return await generateDoc(docConfig);
-        })
+        docFiles.map(
+            async (docConfig: DocConfig): Promise<string> => {
+                return await generateDoc(docConfig);
+            }
+        )
     );
 
     let doc: string = docs.join('');
