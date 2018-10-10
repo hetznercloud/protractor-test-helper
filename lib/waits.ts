@@ -111,12 +111,15 @@ export function waitToBeDisplayed(
             log(`Element ${e.locator()} waitToBeDisplayed`);
             return e
                 .isPresent()
-                .then((value: boolean) => {
-                    if (!value) {
-                        return false;
-                    }
-                    return e.isDisplayed();
-                }, () => false)
+                .then(
+                    (value: boolean) => {
+                        if (!value) {
+                            return false;
+                        }
+                        return e.isDisplayed();
+                    },
+                    () => false
+                )
                 .then((value: boolean) => value, () => false);
         },
         timeout,
