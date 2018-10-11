@@ -42,7 +42,9 @@ export function click(
                     // tslint:disable-next-line:no-console
                     console.log(`Click error: ${error}`);
                     // tslint:disable-next-line:no-console
-                    console.log(`Click retry ${tryCount} on target ${target}`);
+                    console.log(
+                        `Click retry ${tryCount} on target ${e.locator()}`
+                    );
                     tryCount = tryCount - 1;
                     click(target, timeout, tryCount);
                 } else {
