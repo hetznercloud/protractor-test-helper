@@ -136,7 +136,7 @@ Waits for an element to be displayed and clickable, and click on it. If the clic
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Target element |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds to wait for the target |
@@ -155,7 +155,7 @@ Waits for an element to be displayed and positions the pointer inside that eleme
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Target element |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds to wait for the target |
@@ -173,7 +173,7 @@ Select an `<option>`. If the selection fails, 3 retries are performed.
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | option |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Target <option> element |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds to wait for the target |
@@ -191,7 +191,7 @@ Select an `<option>` ancestor of a particular `<select>` element by its index. A
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | select |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Parent <select> element |
 | index | `number` | - |  Index of the option which should be selected |
@@ -210,7 +210,7 @@ Select an `<option>` ancestor of a particular `<select>` element by its content.
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | select |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Parent <select> element |
 | text | `string` | - |  Text of the option which should be selected |
@@ -229,7 +229,7 @@ Wait for an `<input>` element to be displayed, then clear its content, and perfo
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Target element |
 | value | `string` | - |  Input value which should be sent as key inputs |
@@ -252,7 +252,7 @@ Wait for an element's attribute value to match a regular expression.
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Target element |
 | attr | `string` | - |  Attribute name |
@@ -272,7 +272,7 @@ Wait for an element's attribute to have the given value.
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Target element |
 | attr | `string` | - |  Attribute name |
@@ -292,7 +292,7 @@ Waits that a selector resolves to the expected number of elements. Useful e.g. t
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | target |  `ElementArrayFinder` &#124; `Locator` &#124; `string`| - |  Target selector or ElementArryFinder |
 | expected | `number` | - |  Number of the expected elements |
@@ -311,7 +311,7 @@ Waits that a selector resolves to more than the expected count of elements. Usef
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | target |  `ElementArrayFinder` &#124; `Locator` &#124; `string`| - |  Target selector or ElementArrayFinder |
 | expected | `number` | - |  Expected number of elements |
@@ -330,7 +330,7 @@ Waits that a selector resolves to less than the expected count of elements. Usef
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | target |  `ElementArrayFinder` &#124; `Locator` &#124; `string`| - |  Target selector or ElementArrayFinder |
 | expected | `number` | - |  Should be less than the expected number of elements |
@@ -349,9 +349,9 @@ Wait for an element's text content to match a regular expression.
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  - |
+| target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  \- |
 | value | `RegExp` | - |  The RegExp which the content of the target should match |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
 
@@ -368,7 +368,7 @@ Wait for an element's text content to equal the given value.
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Target element |
 | value | `string` | - |  The string we are waiting for |
@@ -387,7 +387,7 @@ Wait for the browser's URL to match a regular expression.
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | value | `RegExp` | - |  RegExp which the URL should match |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
@@ -405,7 +405,7 @@ Waits for a window count. Useful e.g. for confirming that a popup window was ope
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | count | `number` | - |  Expected number of windows |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
@@ -423,9 +423,9 @@ Wait for an element to be displayed. Displayed means that it is part of the DOM 
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  - |
+| target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  \- |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
 
 **Returns:** `Promise`<`boolean`>
@@ -441,7 +441,7 @@ Wait for an element to be not displayed. An element which is not displayed could
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Target element |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
@@ -459,9 +459,9 @@ Wait for an element not to be present. Not present means that this element does 
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  - |
+| target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  \- |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
 
 **Returns:** `Promise`<`boolean`>
@@ -477,7 +477,7 @@ Wait for an element to be present. Present means the element is part of the DOM,
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Target element |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
@@ -498,7 +498,7 @@ Waits for the element to be present, and resolves to the attribute's value.
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Target element |
 | attr | `string` | - |  Attribute name to look for |
@@ -517,7 +517,7 @@ Wait for an element to be displayed, and resolves to the text in that element. I
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Target element |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds to wait for the target |
@@ -550,7 +550,7 @@ Closes a browser window, popup, or tab identified by its zero-based index. If tw
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | `Default value` index | `number` | 0 |  The index of the Window |
 
@@ -567,7 +567,7 @@ Opens the passed URL in a new tab.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | url | `string` |  The URL to be opened in the window or tab |
 
@@ -609,7 +609,7 @@ Logs a message in the flow of protractor. This means that the log message appear
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | message | `string` |  Text to be logged to the console in the control flow |
 
@@ -626,7 +626,7 @@ Constructs an ElementArrayFinder from various target types.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | target |  `ElementArrayFinder` &#124; `Locator` &#124; `string`|  Target element |
 
@@ -643,7 +643,7 @@ Constructs an ElementFinder from various target types.
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | target |  `ElementFinder` &#124; `Locator` &#124; `string`|  Target element |
 
@@ -660,7 +660,7 @@ Logs a message to the console if debugging is enabled.
 
 **Parameters:**
 
-| Param | Type | Default value | Description |
+| Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
 | message | `string` | - |  Text to be logged to the console |
 | `Default value` ignoreDebug | `boolean` | false |  Force log message to be logged, regardless of debug settings |
@@ -679,7 +679,7 @@ Performs a page reload and displays a message in the flow log why the reload was
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | reason | `string` |  Text to be logged to the flow log |
 
@@ -696,7 +696,7 @@ Performs a browser sleep. Normally it should be avoided because of its performan
 
 **Parameters:**
 
-| Param | Type | Description |
+| Name | Type | Description |
 | ------ | ------ | ------ |
 | time | `number` |  Time in milliseconds to sleep |
 | `Optional` message | `string` |  Text which explains why the sleep was necessary |
