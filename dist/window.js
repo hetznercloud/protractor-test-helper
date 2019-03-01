@@ -33,6 +33,7 @@ function closeWindow(index) {
     if (index === void 0) { index = 0; }
     return (protractor_1.browser
         .getAllWindowHandles()
+        // tslint:disable-next-line:no-any
         .then(function (handles) {
         if (!handles[index]) {
             throw new Error('Can not close window. Index not found');
@@ -57,6 +58,7 @@ function openUrlInNewTab(url) {
     var windowLength;
     return (protractor_1.browser
         .getAllWindowHandles()
+        // tslint:disable-next-line:no-any
         .then(function (handles) {
         windowLength = handles.length;
         // Create a DOM element, other solution with window.open doesn't work on every browser because it sometimes
@@ -83,6 +85,7 @@ function openUrlInNewTab(url) {
         .then(function () {
         return protractor_1.browser.getAllWindowHandles();
     })
+        // tslint:disable-next-line:no-any
         .then(function (handles) {
         return protractor_1.browser.switchTo().window(handles[handles.length - 1]);
     })
