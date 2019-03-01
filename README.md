@@ -130,7 +130,7 @@ expect(ElementFinder | Locator | string).toBePresent();
 
 ####  click
 
-▸ **click**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, timeout?: *`number`*, tryCount?: *`number`*): `Promise`<`void`>
+▸ **click**(target: *`ElementFinder` \| `Locator` \| `string`*, timeout?: *`number`*, tryCount?: *`number`*): `Promise`<`void`>
 
 Waits for an element to be displayed and clickable, and click on it. If the click fails, `tryCount` retries are performed.
 
@@ -138,7 +138,7 @@ Waits for an element to be displayed and clickable, and click on it. If the clic
 
 | Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Target element |
+| target | `ElementFinder` \| `Locator` \| `string` | - |  Target element |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds to wait for the target |
 | `Default value` tryCount | `number` |  DEFAULT_RETRIES |  Retry counter for the recursion |
 
@@ -149,7 +149,7 @@ ___
 
 ####  hover
 
-▸ **hover**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, timeout?: *`number`*): `Promise`<`void`>
+▸ **hover**(target: *`ElementFinder` \| `Locator` \| `string`*, timeout?: *`number`*): `Promise`<`void`>
 
 Waits for an element to be displayed and positions the pointer inside that element.
 
@@ -157,7 +157,7 @@ Waits for an element to be displayed and positions the pointer inside that eleme
 
 | Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Target element |
+| target | `ElementFinder` \| `Locator` \| `string` | - |  Target element |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds to wait for the target |
 
 **Returns:** `Promise`<`void`>
@@ -167,7 +167,7 @@ ___
 
 ####  selectOption
 
-▸ **selectOption**(option: * `ElementFinder` &#124; `Locator` &#124; `string`*, timeout?: *`number`*): `Promise`<`void`>
+▸ **selectOption**(option: *`ElementFinder` \| `Locator` \| `string`*, timeout?: *`number`*): `Promise`<`void`>
 
 Select an `<option>`. If the selection fails, 3 retries are performed.
 
@@ -175,7 +175,7 @@ Select an `<option>`. If the selection fails, 3 retries are performed.
 
 | Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| option |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Target <option> element |
+| option | `ElementFinder` \| `Locator` \| `string` | - |  Target <option> element |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds to wait for the target |
 
 **Returns:** `Promise`<`void`>
@@ -185,7 +185,7 @@ ___
 
 ####  selectOptionByIndex
 
-▸ **selectOptionByIndex**(select: * `ElementFinder` &#124; `Locator` &#124; `string`*, index: *`number`*, timeout?: *`number`*): `Promise`<`void`>
+▸ **selectOptionByIndex**(select: *`ElementFinder` \| `Locator` \| `string`*, index: *`number`*, timeout?: *`number`*): `Promise`<`void`>
 
 Select an `<option>` ancestor of a particular `<select>` element by its index. All options are collected by `tagName === 'option'`, skipping `<optgroup>` or similar elements. After that the index is selected. If the selection fails, 3 retries are performed.
 
@@ -193,7 +193,7 @@ Select an `<option>` ancestor of a particular `<select>` element by its index. A
 
 | Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| select |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Parent <select> element |
+| select | `ElementFinder` \| `Locator` \| `string` | - |  Parent <select> element |
 | index | `number` | - |  Index of the option which should be selected |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds to wait for the target |
 
@@ -204,7 +204,7 @@ ___
 
 ####  selectOptionByText
 
-▸ **selectOptionByText**(select: * `ElementFinder` &#124; `Locator` &#124; `string`*, text: *`string`*, timeout?: *`number`*): `Promise`<`void`>
+▸ **selectOptionByText**(select: *`ElementFinder` \| `Locator` \| `string`*, text: *`string`*, timeout?: *`number`*): `Promise`<`void`>
 
 Select an `<option>` ancestor of a particular `<select>` element by its content. The option is identified by Protractor's `cssContainingText` (partial match: `selectOptionByText('bar')` matches `<option>foobar</option>` too). If the selection fails, 3 retries are performed.
 
@@ -212,7 +212,7 @@ Select an `<option>` ancestor of a particular `<select>` element by its content.
 
 | Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| select |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Parent <select> element |
+| select | `ElementFinder` \| `Locator` \| `string` | - |  Parent <select> element |
 | text | `string` | - |  Text of the option which should be selected |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds to wait for the target |
 
@@ -223,7 +223,7 @@ ___
 
 ####  sendKeys
 
-▸ **sendKeys**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, value: *`string`*, timeout?: *`number`*, tryCount?: *`number`*): `Promise`<`void`>
+▸ **sendKeys**(target: *`ElementFinder` \| `Locator` \| `string`*, value: *`string`*, timeout?: *`number`*, tryCount?: *`number`*): `Promise`<`void`>
 
 Wait for an `<input>` element to be displayed, then clear its content, and perform key strokes for the passed value. If sendKeys fails, `tryCount` retries are performed.
 
@@ -231,7 +231,7 @@ Wait for an `<input>` element to be displayed, then clear its content, and perfo
 
 | Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Target element |
+| target | `ElementFinder` \| `Locator` \| `string` | - |  Target element |
 | value | `string` | - |  Input value which should be sent as key inputs |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds to wait for the target |
 | `Default value` tryCount | `number` |  DEFAULT_RETRIES |  Retry counter for the recursion |
@@ -246,7 +246,7 @@ ___
 
 ####  waitForAttributeMatch
 
-▸ **waitForAttributeMatch**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, attr: *`string`*, value: *`RegExp`*, timeout?: *`number`*): `Promise`<`boolean`>
+▸ **waitForAttributeMatch**(target: *`ElementFinder` \| `Locator` \| `string`*, attr: *`string`*, value: *`RegExp`*, timeout?: *`number`*): `Promise`<`boolean`>
 
 Wait for an element's attribute value to match a regular expression.
 
@@ -254,7 +254,7 @@ Wait for an element's attribute value to match a regular expression.
 
 | Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Target element |
+| target | `ElementFinder` \| `Locator` \| `string` | - |  Target element |
 | attr | `string` | - |  Attribute name |
 | value | `RegExp` | - |  RegExp which the attribute's value should match |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
@@ -266,7 +266,7 @@ ___
 
 ####  waitForAttributeToBe
 
-▸ **waitForAttributeToBe**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, attr: *`string`*, value: *`string`*, timeout?: *`number`*): `Promise`<`boolean`>
+▸ **waitForAttributeToBe**(target: *`ElementFinder` \| `Locator` \| `string`*, attr: *`string`*, value: *`string`*, timeout?: *`number`*): `Promise`<`boolean`>
 
 Wait for an element's attribute to have the given value.
 
@@ -274,7 +274,7 @@ Wait for an element's attribute to have the given value.
 
 | Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Target element |
+| target | `ElementFinder` \| `Locator` \| `string` | - |  Target element |
 | attr | `string` | - |  Attribute name |
 | value | `string` | - |  Value which the attribute should have |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
@@ -286,7 +286,7 @@ ___
 
 ####  waitForElementCountToBe
 
-▸ **waitForElementCountToBe**(target: * `ElementArrayFinder` &#124; `Locator` &#124; `string`*, expected: *`number`*, timeout?: *`number`*): `Promise`<`boolean`>
+▸ **waitForElementCountToBe**(target: *`ElementArrayFinder` \| `Locator` \| `string`*, expected: *`number`*, timeout?: *`number`*): `Promise`<`boolean`>
 
 Waits that a selector resolves to the expected number of elements. Useful e.g. to verify that the expected number of items have been added to a list.
 
@@ -294,7 +294,7 @@ Waits that a selector resolves to the expected number of elements. Useful e.g. t
 
 | Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| target |  `ElementArrayFinder` &#124; `Locator` &#124; `string`| - |  Target selector or ElementArryFinder |
+| target | `ElementArrayFinder` \| `Locator` \| `string` | - |  Target selector or ElementArryFinder |
 | expected | `number` | - |  Number of the expected elements |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
 
@@ -305,7 +305,7 @@ ___
 
 ####  waitForElementCountToBeGreaterThan
 
-▸ **waitForElementCountToBeGreaterThan**(target: * `ElementArrayFinder` &#124; `Locator` &#124; `string`*, expected: *`number`*, timeout?: *`number`*): `Promise`<`boolean`>
+▸ **waitForElementCountToBeGreaterThan**(target: *`ElementArrayFinder` \| `Locator` \| `string`*, expected: *`number`*, timeout?: *`number`*): `Promise`<`boolean`>
 
 Waits that a selector resolves to more than the expected count of elements. Useful e.g. to verify that at least some number of items have been added to a list.
 
@@ -313,7 +313,7 @@ Waits that a selector resolves to more than the expected count of elements. Usef
 
 | Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| target |  `ElementArrayFinder` &#124; `Locator` &#124; `string`| - |  Target selector or ElementArrayFinder |
+| target | `ElementArrayFinder` \| `Locator` \| `string` | - |  Target selector or ElementArrayFinder |
 | expected | `number` | - |  Expected number of elements |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
 
@@ -324,7 +324,7 @@ ___
 
 ####  waitForElementCountToBeLessThan
 
-▸ **waitForElementCountToBeLessThan**(target: * `ElementArrayFinder` &#124; `Locator` &#124; `string`*, expected: *`number`*, timeout?: *`number`*): `Promise`<`boolean`>
+▸ **waitForElementCountToBeLessThan**(target: *`ElementArrayFinder` \| `Locator` \| `string`*, expected: *`number`*, timeout?: *`number`*): `Promise`<`boolean`>
 
 Waits that a selector resolves to less than the expected count of elements. Useful e.g. to verify that at least some elements have been removed from a list.
 
@@ -332,7 +332,7 @@ Waits that a selector resolves to less than the expected count of elements. Usef
 
 | Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| target |  `ElementArrayFinder` &#124; `Locator` &#124; `string`| - |  Target selector or ElementArrayFinder |
+| target | `ElementArrayFinder` \| `Locator` \| `string` | - |  Target selector or ElementArrayFinder |
 | expected | `number` | - |  Should be less than the expected number of elements |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
 
@@ -343,7 +343,7 @@ ___
 
 ####  waitForTextMatch
 
-▸ **waitForTextMatch**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, value: *`RegExp`*, timeout?: *`number`*): `Promise`<`boolean`>
+▸ **waitForTextMatch**(target: *`ElementFinder` \| `Locator` \| `string`*, value: *`RegExp`*, timeout?: *`number`*): `Promise`<`boolean`>
 
 Wait for an element's text content to match a regular expression.
 
@@ -351,7 +351,7 @@ Wait for an element's text content to match a regular expression.
 
 | Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  \- |
+| target | `ElementFinder` \| `Locator` \| `string` | - |  \- |
 | value | `RegExp` | - |  The RegExp which the content of the target should match |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
 
@@ -362,7 +362,7 @@ ___
 
 ####  waitForTextToBe
 
-▸ **waitForTextToBe**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, value: *`string`*, timeout?: *`number`*): `Promise`<`boolean`>
+▸ **waitForTextToBe**(target: *`ElementFinder` \| `Locator` \| `string`*, value: *`string`*, timeout?: *`number`*): `Promise`<`boolean`>
 
 Wait for an element's text content to equal the given value.
 
@@ -370,7 +370,7 @@ Wait for an element's text content to equal the given value.
 
 | Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Target element |
+| target | `ElementFinder` \| `Locator` \| `string` | - |  Target element |
 | value | `string` | - |  The string we are waiting for |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
 
@@ -417,7 +417,7 @@ ___
 
 ####  waitToBeDisplayed
 
-▸ **waitToBeDisplayed**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, timeout?: *`number`*): `Promise`<`boolean`>
+▸ **waitToBeDisplayed**(target: *`ElementFinder` \| `Locator` \| `string`*, timeout?: *`number`*): `Promise`<`boolean`>
 
 Wait for an element to be displayed. Displayed means that it is part of the DOM **and** visible.
 
@@ -425,7 +425,7 @@ Wait for an element to be displayed. Displayed means that it is part of the DOM 
 
 | Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  \- |
+| target | `ElementFinder` \| `Locator` \| `string` | - |  \- |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
 
 **Returns:** `Promise`<`boolean`>
@@ -435,7 +435,7 @@ ___
 
 ####  waitToBeNotDisplayed
 
-▸ **waitToBeNotDisplayed**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, timeout?: *`number`*): `Promise`<`boolean`>
+▸ **waitToBeNotDisplayed**(target: *`ElementFinder` \| `Locator` \| `string`*, timeout?: *`number`*): `Promise`<`boolean`>
 
 Wait for an element to be not displayed. An element which is not displayed could still be part of the DOM, but is hidden by a css rule.
 
@@ -443,7 +443,7 @@ Wait for an element to be not displayed. An element which is not displayed could
 
 | Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Target element |
+| target | `ElementFinder` \| `Locator` \| `string` | - |  Target element |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
 
 **Returns:** `Promise`<`boolean`>
@@ -453,7 +453,7 @@ ___
 
 ####  waitToBeNotPresent
 
-▸ **waitToBeNotPresent**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, timeout?: *`number`*): `Promise`<`boolean`>
+▸ **waitToBeNotPresent**(target: *`ElementFinder` \| `Locator` \| `string`*, timeout?: *`number`*): `Promise`<`boolean`>
 
 Wait for an element not to be present. Not present means that this element does not exist in the DOM.
 
@@ -461,7 +461,7 @@ Wait for an element not to be present. Not present means that this element does 
 
 | Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  \- |
+| target | `ElementFinder` \| `Locator` \| `string` | - |  \- |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
 
 **Returns:** `Promise`<`boolean`>
@@ -471,7 +471,7 @@ ___
 
 ####  waitToBePresent
 
-▸ **waitToBePresent**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, timeout?: *`number`*): `Promise`<`boolean`>
+▸ **waitToBePresent**(target: *`ElementFinder` \| `Locator` \| `string`*, timeout?: *`number`*): `Promise`<`boolean`>
 
 Wait for an element to be present. Present means the element is part of the DOM, but still might be hidden by CSS rules.
 
@@ -479,7 +479,7 @@ Wait for an element to be present. Present means the element is part of the DOM,
 
 | Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Target element |
+| target | `ElementFinder` \| `Locator` \| `string` | - |  Target element |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
 
 **Returns:** `Promise`<`boolean`>
@@ -492,7 +492,7 @@ ___
 
 ####  getElementAttributeValue
 
-▸ **getElementAttributeValue**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, attr: *`string`*, timeout?: *`number`*): `Promise`<`string`>
+▸ **getElementAttributeValue**(target: *`ElementFinder` \| `Locator` \| `string`*, attr: *`string`*, timeout?: *`number`*): `Promise`<`string`>
 
 Waits for the element to be present, and resolves to the attribute's value.
 
@@ -500,7 +500,7 @@ Waits for the element to be present, and resolves to the attribute's value.
 
 | Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Target element |
+| target | `ElementFinder` \| `Locator` \| `string` | - |  Target element |
 | attr | `string` | - |  Attribute name to look for |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds to wait for the target |
 
@@ -511,7 +511,7 @@ ___
 
 ####  getText
 
-▸ **getText**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*, timeout?: *`number`*, tryCount?: *`number`*): `Promise`<`string`>
+▸ **getText**(target: *`ElementFinder` \| `Locator` \| `string`*, timeout?: *`number`*, tryCount?: *`number`*): `Promise`<`string`>
 
 Wait for an element to be displayed, and resolves to the text in that element. If `getText` fails, `tryCount` retries are performed.
 
@@ -519,7 +519,7 @@ Wait for an element to be displayed, and resolves to the text in that element. I
 
 | Name | Type | Default value | Description |
 | ------ | ------ | ------ | ------ |
-| target |  `ElementFinder` &#124; `Locator` &#124; `string`| - |  Target element |
+| target | `ElementFinder` \| `Locator` \| `string` | - |  Target element |
 | `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds to wait for the target |
 | `Default value` tryCount | `number` |  DEFAULT_RETRIES |  Retry counter for the recursion |
 
@@ -620,7 +620,7 @@ ___
 
 ####  getElementArrayFinder
 
-▸ **getElementArrayFinder**(target: * `ElementArrayFinder` &#124; `Locator` &#124; `string`*): `ElementArrayFinder`
+▸ **getElementArrayFinder**(target: *`ElementArrayFinder` \| `Locator` \| `string`*): `ElementArrayFinder`
 
 Constructs an ElementArrayFinder from various target types.
 
@@ -628,7 +628,7 @@ Constructs an ElementArrayFinder from various target types.
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| target |  `ElementArrayFinder` &#124; `Locator` &#124; `string`|  Target element |
+| target | `ElementArrayFinder` \| `Locator` \| `string` |  Target element |
 
 **Returns:** `ElementArrayFinder`
 
@@ -637,7 +637,7 @@ ___
 
 ####  getElementFinder
 
-▸ **getElementFinder**(target: * `ElementFinder` &#124; `Locator` &#124; `string`*): `ElementFinder`
+▸ **getElementFinder**(target: *`ElementFinder` \| `Locator` \| `string`*): `ElementFinder`
 
 Constructs an ElementFinder from various target types.
 
@@ -645,7 +645,7 @@ Constructs an ElementFinder from various target types.
 
 | Name | Type | Description |
 | ------ | ------ | ------ |
-| target |  `ElementFinder` &#124; `Locator` &#124; `string`|  Target element |
+| target | `ElementFinder` \| `Locator` \| `string` |  Target element |
 
 **Returns:** `ElementFinder`
 
@@ -675,6 +675,7 @@ ___
 ▸ **refresh**(reason: *`string`*): `Promise`<`void`>
 
 Performs a page reload and displays a message in the flow log why the reload was necessary.
+
 *__see__*: flowLog
 
 **Parameters:**

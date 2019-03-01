@@ -55,7 +55,7 @@ async function generateTsDocs(outPath: string): Promise<void> {
 }
 
 async function generateDoc(docConfig: DocConfig): Promise<string> {
-    let doc: string = await getFunctionDeclarationOfFile(
+    const doc: string = await getFunctionDeclarationOfFile(
         getDocPath(docConfig.file)
     );
     return `## ${docConfig.headline} ${doc}`;
