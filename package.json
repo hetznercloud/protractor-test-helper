@@ -71,8 +71,8 @@
     "rxjs": "^6.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.10.0",
-    "typedoc": "^0.13.0",
-    "typedoc-plugin-markdown": "^1.1.18",
+    "typedoc": "^0.14.2",
+    "typedoc-plugin-markdown": "^1.1.27",
     "typescript": "3.2.4",
     "zone.js": "^0.8.29"
   },
