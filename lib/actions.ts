@@ -70,10 +70,7 @@ export function hover(
     const e: ElementFinder = getElementFinder(target);
     return waitToBeDisplayed(target, timeout)
         .then(() => {
-            return browser
-                .actions()
-                .mouseMove(e)
-                .perform();
+            return browser.actions().mouseMove(e).perform();
         })
         .catch(() => {
             // Fallback for

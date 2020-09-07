@@ -8,7 +8,7 @@ import { getElementFinder } from './utils';
 import AsyncCustomMatcher = jasmine.AsyncCustomMatcher;
 
 export function installMatcher(): void {
-    beforeEach(function(): void {
+    beforeEach(function (): void {
         jasmine.addMatchers({
             toBePresent(): AsyncCustomMatcher {
                 return {

@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.getWindowHandlesCount = exports.getElementAttributeValue = exports.getText = void 0;
 /**
  * Copyright (c) 2018 Hetzner Cloud GmbH
  *

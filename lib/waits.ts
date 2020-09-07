@@ -27,7 +27,10 @@ export function waitToBeNotPresent(
         () => {
             return getElementFinder(target)
                 .isPresent()
-                .then((value: boolean) => !value, () => false);
+                .then(
+                    (value: boolean) => !value,
+                    () => false
+                );
         },
         timeout,
         `Element ${e.locator()} is still present`
@@ -59,7 +62,10 @@ export function waitToBeNotDisplayed(
 
                     return e.isDisplayed();
                 })
-                .then((value: boolean) => !value, () => false);
+                .then(
+                    (value: boolean) => !value,
+                    () => false
+                );
         },
         timeout,
         `Element ${e.locator()} is still displayed`
@@ -84,7 +90,10 @@ export function waitToBePresent(
         (): webdriver.promise.Promise<boolean> => {
             e = getElementFinder(target);
             log(`Element ${e.locator()} waitToBePresent`);
-            return e.isPresent().then((value: boolean) => value, () => false);
+            return e.isPresent().then(
+                (value: boolean) => value,
+                () => false
+            );
         },
         timeout,
         `Element ${e.locator()} is not present`
@@ -120,7 +129,10 @@ export function waitToBeDisplayed(
                     },
                     () => false
                 )
-                .then((value: boolean) => value, () => false);
+                .then(
+                    (value: boolean) => value,
+                    () => false
+                );
         },
         timeout,
         `Element ${e.locator()} is not present nor displayed`
@@ -149,7 +161,10 @@ export function waitForTextToBe(
                 .then(() => {
                     return getElementFinder(target).getText();
                 })
-                .then((text: string) => text === value, () => false);
+                .then(
+                    (text: string) => text === value,
+                    () => false
+                );
         },
         timeout,
         `Error waiting for text in ${e.locator()} to be ${value}`
@@ -173,7 +188,10 @@ export function waitForTextMatch(
         () => {
             return waitToBeDisplayed(target, timeout)
                 .then(() => getElementFinder(target).getText())
-                .then((text: string) => !!text.match(value), () => false);
+                .then(
+                    (text: string) => !!text.match(value),
+                    () => false
+                );
         },
         timeout,
         `Error waiting for text to match ${value}`
@@ -199,7 +217,10 @@ export function waitForAttributeToBe(
         () => {
             return waitToBeDisplayed(target, timeout)
                 .then(() => getElementFinder(target).getAttribute(attr))
-                .then((text: string) => text === value, () => false);
+                .then(
+                    (text: string) => text === value,
+                    () => false
+                );
         },
         timeout,
         `Error waiting for attribute ${attr} value to be ${value}`
@@ -225,7 +246,10 @@ export function waitForAttributeMatch(
         () => {
             return waitToBeDisplayed(target, timeout)
                 .then(() => getElementFinder(target).getAttribute(attr))
-                .then((text: string) => !!text.match(value), () => false);
+                .then(
+                    (text: string) => !!text.match(value),
+                    () => false
+                );
         },
         timeout,
         `Error waiting for attribute ${attr} value to match ${value}`
@@ -245,9 +269,10 @@ export function waitForUrlMatch(
 ): webdriver.promise.Promise<boolean> {
     return browser.wait(
         () => {
-            return browser
-                .getCurrentUrl()
-                .then((url: string) => !!url.match(value), () => false);
+            return browser.getCurrentUrl().then(
+                (url: string) => !!url.match(value),
+                () => false
+            );
         },
         timeout,
         `URL has not changed to match ${value}`
@@ -272,9 +297,10 @@ export function waitForElementCountToBe(
 
     return browser.wait(
         () => {
-            return es
-                .count()
-                .then((count: number) => count === expected, () => false);
+            return es.count().then(
+                (count: number) => count === expected,
+                () => false
+            );
         },
         timeout,
         `Count of element list ${es.locator()} does not equal expected value ${expected}.`
@@ -299,9 +325,10 @@ export function waitForElementCountToBeGreaterThan(
     const es: ElementArrayFinder = getElementArrayFinder(target);
     return browser.wait(
         () => {
-            return es
-                .count()
-                .then((count: number) => count > expected, () => false);
+            return es.count().then(
+                (count: number) => count > expected,
+                () => false
+            );
         },
         timeout,
         `Count of element list ${es.locator()} is not greather than expected value ${expected}.`
@@ -326,9 +353,10 @@ export function waitForElementCountToBeLessThan(
     const es: ElementArrayFinder = getElementArrayFinder(target);
     return browser.wait(
         () => {
-            return es
-                .count()
-                .then((count: number) => count < expected, () => false);
+            return es.count().then(
+                (count: number) => count < expected,
+                () => false
+            );
         },
         timeout,
         `Count of element list ${es.locator()} is not less than expected value ${expected}.`
@@ -352,6 +380,9 @@ export function waitForWindowCount(
             .then((handels: string[]) => {
                 return handels.length;
             })
-            .then((windows: number) => windows === count, () => false);
+            .then(
+                (windows: number) => windows === count,
+                () => false
+            );
     }, timeout);
 }
