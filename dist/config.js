@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.DEBUG = exports.DEFAULT_RETRIES = exports.DEFAULT_TIMEOUT = void 0;
 /**
  * Copyright (c) 2018 Hetzner Cloud GmbH
  *

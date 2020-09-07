@@ -20,7 +20,7 @@ exports.config = {
     jasmineNodeOpts: {
         showColors: true,
         defaultTimeoutInterval: 30000,
-        print: function() {},
+        print: function () {},
     },
     SELENIUM_PROMISE_MANAGER: false,
     onPrepare() {

@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.installMatcher = void 0;
 var utils_1 = require("./utils");
 function installMatcher() {
     beforeEach(function () {

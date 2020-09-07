@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.waitForWindowCount = exports.waitForElementCountToBeLessThan = exports.waitForElementCountToBeGreaterThan = exports.waitForElementCountToBe = exports.waitForUrlMatch = exports.waitForAttributeMatch = exports.waitForAttributeToBe = exports.waitForTextMatch = exports.waitForTextToBe = exports.waitToBeDisplayed = exports.waitToBePresent = exports.waitToBeNotDisplayed = exports.waitToBeNotPresent = void 0;
 /**
  * Copyright (c) 2018 Hetzner Cloud GmbH
  *
