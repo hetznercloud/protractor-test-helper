@@ -1,10 +1,10 @@
 sudo: required
 dist: bionic
 env:
-  - MOZ_HEADLESS=1
+    - MOZ_HEADLESS=1
 addons:
-  chrome: stable
-  firefox: latest
+    chrome: stable
+    firefox: latest
 language: node_js
 node_js:
     - 10
@@ -14,12 +14,13 @@ before_install:
 before_script:
     - greenkeeper-lockfile-update
     - export DISPLAY=:99.0
-    - sh -e /etc/init.d/xvfb start
+services:
+    - xvfb
 after_script: greenkeeper-lockfile-upload
 cache:
-  yarn: true
-  directories:
-      - node_modules
+    yarn: true
+    directories:
+        - node_modules
 install:
     - yarn
     - yarn webdriver:update
