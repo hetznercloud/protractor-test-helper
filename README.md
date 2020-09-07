@@ -126,584 +126,562 @@ expect(ElementFinder | Locator | string).toBePresent();
 ## API
 ### Actions 
 
-<a id="click"></a>
-
 ####  click
 
-▸ **click**(target: *`ElementFinder` \| `Locator` \| `string`*, timeout?: *`number`*, tryCount?: *`number`*): `Promise`<`void`>
+▸ **click**(`target`: ElementFinder | Locator | string, `timeout`: number, `tryCount`: number): *Promise‹void›*
 
-Waits for an element to be displayed and clickable, and click on it. If the click fails, `tryCount` retries are performed.
+Waits for an element to be displayed and clickable, and click on it.
+If the click fails, `tryCount` retries are performed.
 
 **Parameters:**
 
-| Name | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| target | `ElementFinder` \| `Locator` \| `string` | - |  Target element |
-| `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds to wait for the target |
-| `Default value` tryCount | `number` |  DEFAULT_RETRIES |  Retry counter for the recursion |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`target` | ElementFinder &#124; Locator &#124; string | - | Target element |
+`timeout` | number | DEFAULT_TIMEOUT | Timeout in milliseconds to wait for the target |
+`tryCount` | number | DEFAULT_RETRIES | Retry counter for the recursion  |
 
-**Returns:** `Promise`<`void`>
+**Returns:** *Promise‹void›*
 
 ___
-<a id="hover"></a>
 
 ####  hover
 
-▸ **hover**(target: *`ElementFinder` \| `Locator` \| `string`*, timeout?: *`number`*): `Promise`<`void`>
+▸ **hover**(`target`: ElementFinder | Locator | string, `timeout`: number): *Promise‹void›*
 
-Waits for an element to be displayed and positions the pointer inside that element.
+Waits for an element to be displayed and positions the pointer inside that
+element.
 
 **Parameters:**
 
-| Name | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| target | `ElementFinder` \| `Locator` \| `string` | - |  Target element |
-| `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds to wait for the target |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`target` | ElementFinder &#124; Locator &#124; string | - | Target element |
+`timeout` | number | DEFAULT_TIMEOUT | Timeout in milliseconds to wait for the target  |
 
-**Returns:** `Promise`<`void`>
+**Returns:** *Promise‹void›*
 
 ___
-<a id="selectoption"></a>
 
 ####  selectOption
 
-▸ **selectOption**(option: *`ElementFinder` \| `Locator` \| `string`*, timeout?: *`number`*): `Promise`<`void`>
+▸ **selectOption**(`option`: ElementFinder | Locator | string, `timeout`: number): *Promise‹void›*
 
 Select an `<option>`. If the selection fails, 3 retries are performed.
 
 **Parameters:**
 
-| Name | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| option | `ElementFinder` \| `Locator` \| `string` | - |  Target <option> element |
-| `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds to wait for the target |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`option` | ElementFinder &#124; Locator &#124; string | - | Target <option> element |
+`timeout` | number | DEFAULT_TIMEOUT | Timeout in milliseconds to wait for the target  |
 
-**Returns:** `Promise`<`void`>
+**Returns:** *Promise‹void›*
 
 ___
-<a id="selectoptionbyindex"></a>
 
 ####  selectOptionByIndex
 
-▸ **selectOptionByIndex**(select: *`ElementFinder` \| `Locator` \| `string`*, index: *`number`*, timeout?: *`number`*): `Promise`<`void`>
+▸ **selectOptionByIndex**(`select`: ElementFinder | Locator | string, `index`: number, `timeout`: number): *Promise‹void›*
 
-Select an `<option>` ancestor of a particular `<select>` element by its index. All options are collected by `tagName === 'option'`, skipping `<optgroup>` or similar elements. After that the index is selected. If the selection fails, 3 retries are performed.
+Select an `<option>` ancestor of a particular `<select>` element by its
+index. All options are collected by `tagName === 'option'`, skipping
+`<optgroup>` or similar elements. After that the index is selected.
+If the selection fails, 3 retries are performed.
 
 **Parameters:**
 
-| Name | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| select | `ElementFinder` \| `Locator` \| `string` | - |  Parent <select> element |
-| index | `number` | - |  Index of the option which should be selected |
-| `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds to wait for the target |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`select` | ElementFinder &#124; Locator &#124; string | - | Parent <select> element |
+`index` | number | - | Index of the option which should be selected |
+`timeout` | number | DEFAULT_TIMEOUT | Timeout in milliseconds to wait for the target  |
 
-**Returns:** `Promise`<`void`>
+**Returns:** *Promise‹void›*
 
 ___
-<a id="selectoptionbytext"></a>
 
 ####  selectOptionByText
 
-▸ **selectOptionByText**(select: *`ElementFinder` \| `Locator` \| `string`*, text: *`string`*, timeout?: *`number`*): `Promise`<`void`>
+▸ **selectOptionByText**(`select`: ElementFinder | Locator | string, `text`: string, `timeout`: number): *Promise‹void›*
 
-Select an `<option>` ancestor of a particular `<select>` element by its content. The option is identified by Protractor's `cssContainingText` (partial match: `selectOptionByText('bar')` matches `<option>foobar</option>` too). If the selection fails, 3 retries are performed.
+Select an `<option>` ancestor of a particular `<select>` element by its
+content. The option is identified by Protractor's `cssContainingText`
+(partial match: `selectOptionByText('bar')` matches `<option>foobar</option>`
+too). If the selection fails, 3 retries are performed.
 
 **Parameters:**
 
-| Name | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| select | `ElementFinder` \| `Locator` \| `string` | - |  Parent <select> element |
-| text | `string` | - |  Text of the option which should be selected |
-| `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds to wait for the target |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`select` | ElementFinder &#124; Locator &#124; string | - | Parent <select> element |
+`text` | string | - | Text of the option which should be selected |
+`timeout` | number | DEFAULT_TIMEOUT | Timeout in milliseconds to wait for the target  |
 
-**Returns:** `Promise`<`void`>
+**Returns:** *Promise‹void›*
 
 ___
-<a id="sendkeys"></a>
 
 ####  sendKeys
 
-▸ **sendKeys**(target: *`ElementFinder` \| `Locator` \| `string`*, value: *`string`*, timeout?: *`number`*, tryCount?: *`number`*): `Promise`<`void`>
+▸ **sendKeys**(`target`: ElementFinder | Locator | string, `value`: string, `timeout`: number, `tryCount`: number): *Promise‹void›*
 
-Wait for an `<input>` element to be displayed, then clear its content, and perform key strokes for the passed value. If sendKeys fails, `tryCount` retries are performed.
+Wait for an `<input>` element to be displayed, then clear its content, and
+perform key strokes for the passed value. If sendKeys fails, `tryCount`
+retries are performed.
 
 **Parameters:**
 
-| Name | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| target | `ElementFinder` \| `Locator` \| `string` | - |  Target element |
-| value | `string` | - |  Input value which should be sent as key inputs |
-| `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds to wait for the target |
-| `Default value` tryCount | `number` |  DEFAULT_RETRIES |  Retry counter for the recursion |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`target` | ElementFinder &#124; Locator &#124; string | - | Target element |
+`value` | string | - | Input value which should be sent as key inputs |
+`timeout` | number | DEFAULT_TIMEOUT | Timeout in milliseconds to wait for the target |
+`tryCount` | number | DEFAULT_RETRIES | Retry counter for the recursion  |
 
-**Returns:** `Promise`<`void`>
-
-___
-
+**Returns:** *Promise‹void›*
 ### Waits 
-
-<a id="waitforattributematch"></a>
 
 ####  waitForAttributeMatch
 
-▸ **waitForAttributeMatch**(target: *`ElementFinder` \| `Locator` \| `string`*, attr: *`string`*, value: *`RegExp`*, timeout?: *`number`*): `Promise`<`boolean`>
+▸ **waitForAttributeMatch**(`target`: ElementFinder | Locator | string, `attr`: string, `value`: RegExp, `timeout`: number): *Promise‹boolean›*
 
 Wait for an element's attribute value to match a regular expression.
 
 **Parameters:**
 
-| Name | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| target | `ElementFinder` \| `Locator` \| `string` | - |  Target element |
-| attr | `string` | - |  Attribute name |
-| value | `RegExp` | - |  RegExp which the attribute's value should match |
-| `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`target` | ElementFinder &#124; Locator &#124; string | - | Target element |
+`attr` | string | - | Attribute name |
+`value` | RegExp | - | RegExp which the attribute's value should match |
+`timeout` | number | DEFAULT_TIMEOUT | Timeout in milliseconds |
 
-**Returns:** `Promise`<`boolean`>
+**Returns:** *Promise‹boolean›*
 
 ___
-<a id="waitforattributetobe"></a>
 
 ####  waitForAttributeToBe
 
-▸ **waitForAttributeToBe**(target: *`ElementFinder` \| `Locator` \| `string`*, attr: *`string`*, value: *`string`*, timeout?: *`number`*): `Promise`<`boolean`>
+▸ **waitForAttributeToBe**(`target`: ElementFinder | Locator | string, `attr`: string, `value`: string, `timeout`: number): *Promise‹boolean›*
 
 Wait for an element's attribute to have the given value.
 
 **Parameters:**
 
-| Name | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| target | `ElementFinder` \| `Locator` \| `string` | - |  Target element |
-| attr | `string` | - |  Attribute name |
-| value | `string` | - |  Value which the attribute should have |
-| `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`target` | ElementFinder &#124; Locator &#124; string | - | Target element |
+`attr` | string | - | Attribute name |
+`value` | string | - | Value which the attribute should have |
+`timeout` | number | DEFAULT_TIMEOUT | Timeout in milliseconds |
 
-**Returns:** `Promise`<`boolean`>
+**Returns:** *Promise‹boolean›*
 
 ___
-<a id="waitforelementcounttobe"></a>
 
 ####  waitForElementCountToBe
 
-▸ **waitForElementCountToBe**(target: *`ElementArrayFinder` \| `Locator` \| `string`*, expected: *`number`*, timeout?: *`number`*): `Promise`<`boolean`>
+▸ **waitForElementCountToBe**(`target`: ElementArrayFinder | Locator | string, `expected`: number, `timeout`: number): *Promise‹boolean›*
 
-Waits that a selector resolves to the expected number of elements. Useful e.g. to verify that the expected number of items have been added to a list.
+Waits that a selector resolves to the expected number of elements. Useful
+e.g. to verify that the expected number of items have been added to a list.
 
 **Parameters:**
 
-| Name | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| target | `ElementArrayFinder` \| `Locator` \| `string` | - |  Target selector or ElementArryFinder |
-| expected | `number` | - |  Number of the expected elements |
-| `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`target` | ElementArrayFinder &#124; Locator &#124; string | - | Target selector or ElementArryFinder |
+`expected` | number | - | Number of the expected elements |
+`timeout` | number | DEFAULT_TIMEOUT | Timeout in milliseconds |
 
-**Returns:** `Promise`<`boolean`>
+**Returns:** *Promise‹boolean›*
 
 ___
-<a id="waitforelementcounttobegreaterthan"></a>
 
 ####  waitForElementCountToBeGreaterThan
 
-▸ **waitForElementCountToBeGreaterThan**(target: *`ElementArrayFinder` \| `Locator` \| `string`*, expected: *`number`*, timeout?: *`number`*): `Promise`<`boolean`>
+▸ **waitForElementCountToBeGreaterThan**(`target`: ElementArrayFinder | Locator | string, `expected`: number, `timeout`: number): *Promise‹boolean›*
 
-Waits that a selector resolves to more than the expected count of elements. Useful e.g. to verify that at least some number of items have been added to a list.
+Waits that a selector resolves to more than the expected count of elements.
+Useful e.g. to verify that at least some number of items have been added to
+a list.
 
 **Parameters:**
 
-| Name | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| target | `ElementArrayFinder` \| `Locator` \| `string` | - |  Target selector or ElementArrayFinder |
-| expected | `number` | - |  Expected number of elements |
-| `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`target` | ElementArrayFinder &#124; Locator &#124; string | - | Target selector or ElementArrayFinder |
+`expected` | number | - | Expected number of elements |
+`timeout` | number | DEFAULT_TIMEOUT | Timeout in milliseconds |
 
-**Returns:** `Promise`<`boolean`>
+**Returns:** *Promise‹boolean›*
 
 ___
-<a id="waitforelementcounttobelessthan"></a>
 
 ####  waitForElementCountToBeLessThan
 
-▸ **waitForElementCountToBeLessThan**(target: *`ElementArrayFinder` \| `Locator` \| `string`*, expected: *`number`*, timeout?: *`number`*): `Promise`<`boolean`>
+▸ **waitForElementCountToBeLessThan**(`target`: ElementArrayFinder | Locator | string, `expected`: number, `timeout`: number): *Promise‹boolean›*
 
-Waits that a selector resolves to less than the expected count of elements. Useful e.g. to verify that at least some elements have been removed from a list.
+Waits that a selector resolves to less than the expected count of elements.
+Useful e.g. to verify that at least some elements have been removed from
+a list.
 
 **Parameters:**
 
-| Name | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| target | `ElementArrayFinder` \| `Locator` \| `string` | - |  Target selector or ElementArrayFinder |
-| expected | `number` | - |  Should be less than the expected number of elements |
-| `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`target` | ElementArrayFinder &#124; Locator &#124; string | - | Target selector or ElementArrayFinder |
+`expected` | number | - | Should be less than the expected number of elements |
+`timeout` | number | DEFAULT_TIMEOUT | Timeout in milliseconds |
 
-**Returns:** `Promise`<`boolean`>
+**Returns:** *Promise‹boolean›*
 
 ___
-<a id="waitfortextmatch"></a>
 
 ####  waitForTextMatch
 
-▸ **waitForTextMatch**(target: *`ElementFinder` \| `Locator` \| `string`*, value: *`RegExp`*, timeout?: *`number`*): `Promise`<`boolean`>
+▸ **waitForTextMatch**(`target`: ElementFinder | Locator | string, `value`: RegExp, `timeout`: number): *Promise‹boolean›*
 
 Wait for an element's text content to match a regular expression.
 
 **Parameters:**
 
-| Name | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| target | `ElementFinder` \| `Locator` \| `string` | - |  \- |
-| value | `RegExp` | - |  The RegExp which the content of the target should match |
-| `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`target` | ElementFinder &#124; Locator &#124; string | - | - |
+`value` | RegExp | - | The RegExp which the content of the target should match |
+`timeout` | number | DEFAULT_TIMEOUT | Timeout in milliseconds |
 
-**Returns:** `Promise`<`boolean`>
+**Returns:** *Promise‹boolean›*
 
 ___
-<a id="waitfortexttobe"></a>
 
 ####  waitForTextToBe
 
-▸ **waitForTextToBe**(target: *`ElementFinder` \| `Locator` \| `string`*, value: *`string`*, timeout?: *`number`*): `Promise`<`boolean`>
+▸ **waitForTextToBe**(`target`: ElementFinder | Locator | string, `value`: string, `timeout`: number): *Promise‹boolean›*
 
 Wait for an element's text content to equal the given value.
 
 **Parameters:**
 
-| Name | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| target | `ElementFinder` \| `Locator` \| `string` | - |  Target element |
-| value | `string` | - |  The string we are waiting for |
-| `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`target` | ElementFinder &#124; Locator &#124; string | - | Target element |
+`value` | string | - | The string we are waiting for |
+`timeout` | number | DEFAULT_TIMEOUT | Timeout in milliseconds |
 
-**Returns:** `Promise`<`boolean`>
+**Returns:** *Promise‹boolean›*
 
 ___
-<a id="waitforurlmatch"></a>
 
 ####  waitForUrlMatch
 
-▸ **waitForUrlMatch**(value: *`RegExp`*, timeout?: *`number`*): `Promise`<`boolean`>
+▸ **waitForUrlMatch**(`value`: RegExp, `timeout`: number): *Promise‹boolean›*
 
 Wait for the browser's URL to match a regular expression.
 
 **Parameters:**
 
-| Name | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| value | `RegExp` | - |  RegExp which the URL should match |
-| `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`value` | RegExp | - | RegExp which the URL should match |
+`timeout` | number | DEFAULT_TIMEOUT | Timeout in milliseconds |
 
-**Returns:** `Promise`<`boolean`>
+**Returns:** *Promise‹boolean›*
 
 ___
-<a id="waitforwindowcount"></a>
 
 ####  waitForWindowCount
 
-▸ **waitForWindowCount**(count: *`number`*, timeout?: *`number`*): `Promise`<`boolean`>
+▸ **waitForWindowCount**(`count`: number, `timeout`: number): *Promise‹boolean›*
 
 Waits for a window count. Useful e.g. for confirming that a popup window was opened.
 
 **Parameters:**
 
-| Name | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| count | `number` | - |  Expected number of windows |
-| `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`count` | number | - | Expected number of windows |
+`timeout` | number | DEFAULT_TIMEOUT | Timeout in milliseconds |
 
-**Returns:** `Promise`<`boolean`>
+**Returns:** *Promise‹boolean›*
 
 ___
-<a id="waittobedisplayed"></a>
 
 ####  waitToBeDisplayed
 
-▸ **waitToBeDisplayed**(target: *`ElementFinder` \| `Locator` \| `string`*, timeout?: *`number`*): `Promise`<`boolean`>
+▸ **waitToBeDisplayed**(`target`: ElementFinder | Locator | string, `timeout`: number): *Promise‹boolean›*
 
-Wait for an element to be displayed. Displayed means that it is part of the DOM **and** visible.
+Wait for an element to be displayed. Displayed means that it is part of the
+DOM **and** visible.
 
 **Parameters:**
 
-| Name | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| target | `ElementFinder` \| `Locator` \| `string` | - |  \- |
-| `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`target` | ElementFinder &#124; Locator &#124; string | - | - |
+`timeout` | number | DEFAULT_TIMEOUT | Timeout in milliseconds |
 
-**Returns:** `Promise`<`boolean`>
+**Returns:** *Promise‹boolean›*
 
 ___
-<a id="waittobenotdisplayed"></a>
 
 ####  waitToBeNotDisplayed
 
-▸ **waitToBeNotDisplayed**(target: *`ElementFinder` \| `Locator` \| `string`*, timeout?: *`number`*): `Promise`<`boolean`>
+▸ **waitToBeNotDisplayed**(`target`: ElementFinder | Locator | string, `timeout`: number): *Promise‹boolean›*
 
-Wait for an element to be not displayed. An element which is not displayed could still be part of the DOM, but is hidden by a css rule.
+Wait for an element to be not displayed. An element which is not displayed
+could still be part of the DOM, but is hidden by a css rule.
 
 **Parameters:**
 
-| Name | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| target | `ElementFinder` \| `Locator` \| `string` | - |  Target element |
-| `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`target` | ElementFinder &#124; Locator &#124; string | - | Target element |
+`timeout` | number | DEFAULT_TIMEOUT | Timeout in milliseconds |
 
-**Returns:** `Promise`<`boolean`>
+**Returns:** *Promise‹boolean›*
 
 ___
-<a id="waittobenotpresent"></a>
 
 ####  waitToBeNotPresent
 
-▸ **waitToBeNotPresent**(target: *`ElementFinder` \| `Locator` \| `string`*, timeout?: *`number`*): `Promise`<`boolean`>
+▸ **waitToBeNotPresent**(`target`: ElementFinder | Locator | string, `timeout`: number): *Promise‹boolean›*
 
-Wait for an element not to be present. Not present means that this element does not exist in the DOM.
+Wait for an element not to be present. Not present means that this element
+does not exist in the DOM.
 
 **Parameters:**
 
-| Name | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| target | `ElementFinder` \| `Locator` \| `string` | - |  \- |
-| `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`target` | ElementFinder &#124; Locator &#124; string | - | - |
+`timeout` | number | DEFAULT_TIMEOUT | Timeout in milliseconds |
 
-**Returns:** `Promise`<`boolean`>
+**Returns:** *Promise‹boolean›*
 
 ___
-<a id="waittobepresent"></a>
 
 ####  waitToBePresent
 
-▸ **waitToBePresent**(target: *`ElementFinder` \| `Locator` \| `string`*, timeout?: *`number`*): `Promise`<`boolean`>
+▸ **waitToBePresent**(`target`: ElementFinder | Locator | string, `timeout`: number): *Promise‹boolean›*
 
-Wait for an element to be present. Present means the element is part of the DOM, but still might be hidden by CSS rules.
+Wait for an element to be present. Present means the element is part of the
+DOM, but still might be hidden by CSS rules.
 
 **Parameters:**
 
-| Name | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| target | `ElementFinder` \| `Locator` \| `string` | - |  Target element |
-| `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`target` | ElementFinder &#124; Locator &#124; string | - | Target element |
+`timeout` | number | DEFAULT_TIMEOUT | Timeout in milliseconds |
 
-**Returns:** `Promise`<`boolean`>
-
-___
-
+**Returns:** *Promise‹boolean›*
 ### Helper 
-
-<a id="getelementattributevalue"></a>
 
 ####  getElementAttributeValue
 
-▸ **getElementAttributeValue**(target: *`ElementFinder` \| `Locator` \| `string`*, attr: *`string`*, timeout?: *`number`*): `Promise`<`string`>
+▸ **getElementAttributeValue**(`target`: ElementFinder | Locator | string, `attr`: string, `timeout`: number): *Promise‹string›*
 
 Waits for the element to be present, and resolves to the attribute's value.
 
 **Parameters:**
 
-| Name | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| target | `ElementFinder` \| `Locator` \| `string` | - |  Target element |
-| attr | `string` | - |  Attribute name to look for |
-| `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds to wait for the target |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`target` | ElementFinder &#124; Locator &#124; string | - | Target element |
+`attr` | string | - | Attribute name to look for |
+`timeout` | number | DEFAULT_TIMEOUT | Timeout in milliseconds to wait for the target |
 
-**Returns:** `Promise`<`string`>
+**Returns:** *Promise‹string›*
 
 ___
-<a id="gettext"></a>
 
 ####  getText
 
-▸ **getText**(target: *`ElementFinder` \| `Locator` \| `string`*, timeout?: *`number`*, tryCount?: *`number`*): `Promise`<`string`>
+▸ **getText**(`target`: ElementFinder | Locator | string, `timeout`: number, `tryCount`: number): *Promise‹string›*
 
-Wait for an element to be displayed, and resolves to the text in that element. If `getText` fails, `tryCount` retries are performed.
+Wait for an element to be displayed, and resolves to the text in that
+element. If `getText` fails, `tryCount` retries are performed.
 
 **Parameters:**
 
-| Name | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| target | `ElementFinder` \| `Locator` \| `string` | - |  Target element |
-| `Default value` timeout | `number` |  DEFAULT_TIMEOUT |  Timeout in milliseconds to wait for the target |
-| `Default value` tryCount | `number` |  DEFAULT_RETRIES |  Retry counter for the recursion |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`target` | ElementFinder &#124; Locator &#124; string | - | Target element |
+`timeout` | number | DEFAULT_TIMEOUT | Timeout in milliseconds to wait for the target |
+`tryCount` | number | DEFAULT_RETRIES | Retry counter for the recursion |
 
-**Returns:** `Promise`<`string`>
+**Returns:** *Promise‹string›*
 
 ___
-<a id="getwindowhandlescount"></a>
 
 ####  getWindowHandlesCount
 
-▸ **getWindowHandlesCount**(): `Promise`<`number`>
+▸ **getWindowHandlesCount**(): *Promise‹number›*
 
-Resolves to the current window count. Windows includes windows, tabs, etc.
+Resolves to the current window count.
+Windows includes windows, tabs, etc.
 
-**Returns:** `Promise`<`number`>
-
-___
-
+**Returns:** *Promise‹number›*
 ### Window 
-
-<a id="closewindow"></a>
 
 ####  closeWindow
 
-▸ **closeWindow**(index?: *`number`*): `Promise`<`void`>
+▸ **closeWindow**(`index`: number): *Promise‹void›*
 
-Closes a browser window, popup, or tab identified by its zero-based index. If two windows are open and the second window is to be closed, the index should be 1.
+Closes a browser window, popup, or tab identified by its zero-based index.
+If two windows are open and the second window is to be closed, the index
+should be 1.
 
 **Parameters:**
 
-| Name | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| `Default value` index | `number` | 0 |  The index of the Window |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`index` | number | 0 | The index of the Window  |
 
-**Returns:** `Promise`<`void`>
+**Returns:** *Promise‹void›*
 
 ___
-<a id="openurlinnewtab"></a>
 
 ####  openUrlInNewTab
 
-▸ **openUrlInNewTab**(url: *`string`*): `Promise`<`boolean`>
+▸ **openUrlInNewTab**(`url`: string): *Promise‹boolean›*
 
 Opens the passed URL in a new tab.
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| url | `string` |  The URL to be opened in the window or tab |
+Name | Type | Description |
+------ | ------ | ------ |
+`url` | string | The URL to be opened in the window or tab  |
 
-**Returns:** `Promise`<`boolean`>
+**Returns:** *Promise‹boolean›*
 
 ___
-<a id="scrollbottom"></a>
 
 ####  scrollBottom
 
-▸ **scrollBottom**(): `Promise`<`void`>
+▸ **scrollBottom**(): *Promise‹void›*
 
 Scrolls to the bottom of the window.
 
-**Returns:** `Promise`<`void`>
+**Returns:** *Promise‹void›*
 
 ___
-<a id="scrolltop"></a>
 
 ####  scrollTop
 
-▸ **scrollTop**(): `Promise`<`void`>
+▸ **scrollTop**(): *Promise‹void›*
 
 Scrolls to the top of the window.
 
-**Returns:** `Promise`<`void`>
-
-___
-
+**Returns:** *Promise‹void›*
 ### Utils 
-
-<a id="flowlog"></a>
 
 ####  flowLog
 
-▸ **flowLog**(message: *`string`*): `Promise`<`void`>
+▸ **flowLog**(`message`: string): *Promise‹void›*
 
-Logs a message in the flow of protractor. This means that the log message appears in the correct order as the actions and tests are performed, and not like regular log output at the test initialization.
+Logs a message in the flow of protractor.
+This means that the log message appears in the correct order
+as the actions and tests are performed, and not like regular
+log output at the test initialization.
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| message | `string` |  Text to be logged to the console in the control flow |
+Name | Type | Description |
+------ | ------ | ------ |
+`message` | string | Text to be logged to the console in the control flow  |
 
-**Returns:** `Promise`<`void`>
+**Returns:** *Promise‹void›*
 
 ___
-<a id="getelementarrayfinder"></a>
 
 ####  getElementArrayFinder
 
-▸ **getElementArrayFinder**(target: *`ElementArrayFinder` \| `Locator` \| `string`*): `ElementArrayFinder`
+▸ **getElementArrayFinder**(`target`: ElementArrayFinder | Locator | string): *ElementArrayFinder*
 
 Constructs an ElementArrayFinder from various target types.
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| target | `ElementArrayFinder` \| `Locator` \| `string` |  Target element |
+Name | Type | Description |
+------ | ------ | ------ |
+`target` | ElementArrayFinder &#124; Locator &#124; string | Target element  |
 
-**Returns:** `ElementArrayFinder`
+**Returns:** *ElementArrayFinder*
 
 ___
-<a id="getelementfinder"></a>
 
 ####  getElementFinder
 
-▸ **getElementFinder**(target: *`ElementFinder` \| `Locator` \| `string`*): `ElementFinder`
+▸ **getElementFinder**(`target`: ElementFinder | Locator | string): *ElementFinder*
 
 Constructs an ElementFinder from various target types.
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| target | `ElementFinder` \| `Locator` \| `string` |  Target element |
+Name | Type | Description |
+------ | ------ | ------ |
+`target` | ElementFinder &#124; Locator &#124; string | Target element  |
 
-**Returns:** `ElementFinder`
+**Returns:** *ElementFinder*
 
 ___
-<a id="log"></a>
 
 ####  log
 
-▸ **log**(message: *`string`*, ignoreDebug?: *`boolean`*): `void`
+▸ **log**(`message`: string, `ignoreDebug`: boolean): *void*
 
 Logs a message to the console if debugging is enabled.
 
 **Parameters:**
 
-| Name | Type | Default value | Description |
-| ------ | ------ | ------ | ------ |
-| message | `string` | - |  Text to be logged to the console |
-| `Default value` ignoreDebug | `boolean` | false |  Force log message to be logged, regardless of debug settings |
+Name | Type | Default | Description |
+------ | ------ | ------ | ------ |
+`message` | string | - | Text to be logged to the console |
+`ignoreDebug` | boolean | false | Force log message to be logged, regardless of debug settings  |
 
-**Returns:** `void`
+**Returns:** *void*
 
 ___
-<a id="refresh"></a>
 
 ####  refresh
 
-▸ **refresh**(reason: *`string`*): `Promise`<`void`>
+▸ **refresh**(`reason`: string): *Promise‹void›*
 
-Performs a page reload and displays a message in the flow log why the reload was necessary.
+Performs a page reload and displays a message in the flow log why the reload
+was necessary.
 
-*__see__*: flowLog
+**`see`** flowLog
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| reason | `string` |  Text to be logged to the flow log |
+Name | Type | Description |
+------ | ------ | ------ |
+`reason` | string | Text to be logged to the flow log  |
 
-**Returns:** `Promise`<`void`>
+**Returns:** *Promise‹void›*
 
 ___
-<a id="sleep"></a>
 
 ####  sleep
 
-▸ **sleep**(time: *`number`*, message?: *`string`*): `Promise`<`void`>
+▸ **sleep**(`time`: number, `message?`: string): *Promise‹void›*
 
-Performs a browser sleep. Normally it should be avoided because of its performance impact, and replaced by one of the `waitTo…` functions wherever possible. If `sleep` is still necessary, a reason can be displayed in the flow log.
+Performs a browser sleep. Normally it should be avoided because of its
+performance impact, and replaced by one of the `waitTo…` functions wherever
+possible. If `sleep` is still necessary, a reason can be displayed in the
+flow log.
 
 **Parameters:**
 
-| Name | Type | Description |
-| ------ | ------ | ------ |
-| time | `number` |  Time in milliseconds to sleep |
-| `Optional` message | `string` |  Text which explains why the sleep was necessary |
+Name | Type | Description |
+------ | ------ | ------ |
+`time` | number | Time in milliseconds to sleep |
+`message?` | string | Text which explains why the sleep was necessary  |
 
-**Returns:** `Promise`<`void`>
-
-___
-
+**Returns:** *Promise‹void›*
 
