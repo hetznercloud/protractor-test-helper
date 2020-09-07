@@ -183,9 +183,7 @@ exports.waitForAttributeMatch = waitForAttributeMatch;
 function waitForUrlMatch(value, timeout) {
     if (timeout === void 0) { timeout = config_1.DEFAULT_TIMEOUT; }
     return protractor_1.browser.wait(function () {
-        return protractor_1.browser
-            .getCurrentUrl()
-            .then(function (url) { return !!url.match(value); }, function () { return false; });
+        return protractor_1.browser.getCurrentUrl().then(function (url) { return !!url.match(value); }, function () { return false; });
     }, timeout, "URL has not changed to match " + value);
 }
 exports.waitForUrlMatch = waitForUrlMatch;
@@ -202,9 +200,7 @@ function waitForElementCountToBe(target, expected, timeout) {
     if (timeout === void 0) { timeout = config_1.DEFAULT_TIMEOUT; }
     var es = utils_1.getElementArrayFinder(target);
     return protractor_1.browser.wait(function () {
-        return es
-            .count()
-            .then(function (count) { return count === expected; }, function () { return false; });
+        return es.count().then(function (count) { return count === expected; }, function () { return false; });
     }, timeout, "Count of element list " + es.locator() + " does not equal expected value " + expected + ".");
 }
 exports.waitForElementCountToBe = waitForElementCountToBe;
@@ -222,9 +218,7 @@ function waitForElementCountToBeGreaterThan(target, expected, timeout) {
     if (timeout === void 0) { timeout = config_1.DEFAULT_TIMEOUT; }
     var es = utils_1.getElementArrayFinder(target);
     return protractor_1.browser.wait(function () {
-        return es
-            .count()
-            .then(function (count) { return count > expected; }, function () { return false; });
+        return es.count().then(function (count) { return count > expected; }, function () { return false; });
     }, timeout, "Count of element list " + es.locator() + " is not greather than expected value " + expected + ".");
 }
 exports.waitForElementCountToBeGreaterThan = waitForElementCountToBeGreaterThan;
@@ -242,9 +236,7 @@ function waitForElementCountToBeLessThan(target, expected, timeout) {
     if (timeout === void 0) { timeout = config_1.DEFAULT_TIMEOUT; }
     var es = utils_1.getElementArrayFinder(target);
     return protractor_1.browser.wait(function () {
-        return es
-            .count()
-            .then(function (count) { return count < expected; }, function () { return false; });
+        return es.count().then(function (count) { return count < expected; }, function () { return false; });
     }, timeout, "Count of element list " + es.locator() + " is not less than expected value " + expected + ".");
 }
 exports.waitForElementCountToBeLessThan = waitForElementCountToBeLessThan;
