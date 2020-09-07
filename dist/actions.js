@@ -58,10 +58,7 @@ function hover(target, timeout) {
     var e = utils_1.getElementFinder(target);
     return waits_1.waitToBeDisplayed(target, timeout)
         .then(function () {
-        return protractor_1.browser
-            .actions()
-            .mouseMove(e)
-            .perform();
+        return protractor_1.browser.actions().mouseMove(e).perform();
     })
         .catch(function () {
         // Fallback for
