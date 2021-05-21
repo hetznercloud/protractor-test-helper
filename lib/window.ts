@@ -42,9 +42,11 @@ export function closeWindow(
                 if (!handles[index]) {
                     throw new Error('Can not close window. Index not found');
                 }
-                browser.switchTo().window(handles[index]);
-                browser.close();
-                return browser.switchTo().window(handles[index - 1]);
+                return browser
+                    .switchTo()
+                    .window(handles[index])
+                    .then(() => browser.close())
+                    .then(() => browser.switchTo().window(handles[index - 1]));
             })
             .catch(e => {
                 console.error(`Error while closing window with index ${index}`);
@@ -90,19 +92,13 @@ export function openUrlInNewTab(
                     tempId
                 );
             })
-            .then(() => {
-                return click(`#${tempId}`);
-            })
-            .then(() => {
-                return waitForWindowCount(windowLength + 1);
-            })
-            .then(() => {
-                return browser.getAllWindowHandles();
-            })
+            .then(() => click(`#${tempId}`))
+            .then(() => waitForWindowCount(windowLength + 1))
+            .then(() => browser.getAllWindowHandles())
             // tslint:disable-next-line:no-any
-            .then((handles: any[]) => {
-                return browser.switchTo().window(handles[handles.length - 1]);
-            })
+            .then((handles: any[]) =>
+                browser.switchTo().window(handles[handles.length - 1])
+            )
             .then(() =>
                 waitForUrlMatch(
                     new RegExp(

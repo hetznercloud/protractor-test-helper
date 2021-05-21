@@ -39,9 +39,11 @@ function closeWindow(index) {
         if (!handles[index]) {
             throw new Error('Can not close window. Index not found');
         }
-        protractor_1.browser.switchTo().window(handles[index]);
-        protractor_1.browser.close();
-        return protractor_1.browser.switchTo().window(handles[index - 1]);
+        return protractor_1.browser
+            .switchTo()
+            .window(handles[index])
+            .then(function () { return protractor_1.browser.close(); })
+            .then(function () { return protractor_1.browser.switchTo().window(handles[index - 1]); });
     })
         .catch(function (e) {
         console.error("Error while closing window with index " + index);
@@ -77,15 +79,9 @@ function openUrlInNewTab(url) {
             return a;
         }, url, tempId);
     })
-        .then(function () {
-        return actions_1.click("#" + tempId);
-    })
-        .then(function () {
-        return waits_1.waitForWindowCount(windowLength + 1);
-    })
-        .then(function () {
-        return protractor_1.browser.getAllWindowHandles();
-    })
+        .then(function () { return actions_1.click("#" + tempId); })
+        .then(function () { return waits_1.waitForWindowCount(windowLength + 1); })
+        .then(function () { return protractor_1.browser.getAllWindowHandles(); })
         // tslint:disable-next-line:no-any
         .then(function (handles) {
         return protractor_1.browser.switchTo().window(handles[handles.length - 1]);
