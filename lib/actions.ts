@@ -46,7 +46,7 @@ export function click(
                         `Click retry ${tryCount} on target ${e.locator()}`
                     );
                     tryCount = tryCount - 1;
-                    click(target, timeout, tryCount);
+                    return click(target, timeout, tryCount);
                 } else {
                     // tslint:disable-next-line:no-console
                     console.error(`Error while clicking on ${e.locator()}`);
@@ -113,9 +113,7 @@ export function sendKeys(
             return e.clear();
         })
         .then(
-            () => {
-                e.sendKeys(value);
-            },
+            () => e.sendKeys(value),
             // tslint:disable-next-line:no-any
             (error: any) => {
                 if (tryCount > 0) {
@@ -125,7 +123,7 @@ export function sendKeys(
                         `Send keys retry ${tryCount} on target ${e.locator()}`
                     );
                     tryCount = tryCount - 1;
-                    sendKeys(target, value, timeout, tryCount);
+                    return sendKeys(target, value, timeout, tryCount);
                 } else {
                     // tslint:disable-next-line:no-console
                     console.error(`Error while sending keys on ${e.locator()}`);

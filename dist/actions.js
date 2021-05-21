@@ -36,7 +36,7 @@ function click(target, timeout, tryCount) {
             // tslint:disable-next-line:no-console
             console.log("Click retry " + tryCount + " on target " + e.locator());
             tryCount = tryCount - 1;
-            click(target, timeout, tryCount);
+            return click(target, timeout, tryCount);
         }
         else {
             // tslint:disable-next-line:no-console
@@ -96,9 +96,7 @@ function sendKeys(target, value, timeout, tryCount) {
         .then(function () {
         return e.clear();
     })
-        .then(function () {
-        e.sendKeys(value);
-    }, 
+        .then(function () { return e.sendKeys(value); }, 
     // tslint:disable-next-line:no-any
     function (error) {
         if (tryCount > 0) {
@@ -106,7 +104,7 @@ function sendKeys(target, value, timeout, tryCount) {
             // tslint:disable-next-line:no-console
             console.log("Send keys retry " + tryCount + " on target " + e.locator());
             tryCount = tryCount - 1;
-            sendKeys(target, value, timeout, tryCount);
+            return sendKeys(target, value, timeout, tryCount);
         }
         else {
             // tslint:disable-next-line:no-console
