@@ -51,7 +51,7 @@
     "@angular/common": "^10.1.0",
     "@angular/compiler": "^10.1.0",
     "@angular/compiler-cli": "^10.1.0",
-    "@angular/core": "^10.1.0",
+    "@angular/core": "^11.0.5",
     "@angular/forms": "^10.1.0",
     "@angular/http": "^7.2.7",
     "@angular/language-service": "^10.1.0",
